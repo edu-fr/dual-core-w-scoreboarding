@@ -1,0 +1,5 @@
+li $s4 20
+li $s1 30
+div $t0 $t1 $t8
+add $s2 $s4 $s1
+move $s3 $s2

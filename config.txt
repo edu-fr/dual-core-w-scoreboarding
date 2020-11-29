@@ -1,0 +1,12 @@
+add = 10
+addi = 5
+and = 3
+andi = 4
+or = 5
+ori = 6
+slt = 7
+sub = 8
+mult = 3
+div = 10
+li = 4
+mov = 1
