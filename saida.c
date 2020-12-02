@@ -5,6 +5,7 @@ extern statusInst status_instrucoes;
 extern UnidadeFuncional vetor_UF[5];
 extern enum UF status_dos_registradores[32];
 extern int banco_registradores[32];
+extern bool flag_registradores[32];
 
 
 void saida(FILE* arq_saida, int PC, char linhas_instrucoes[][64]){
@@ -20,8 +21,22 @@ void escrever_saida(FILE* arq, int PC, char linhas_instrucoes[][64]){
     fprintf(arq, "1) status das instrucoes \n \n");
     fprintf(arq, "\t\t\t\temissao\t|\tleitura dos operandos\t|\texecucao\t|\tescrita dos resultados\t\n");   
     for(int i = 0; i < PC; i++){
-       fprintf(arq, "%s\t\t\t%d\t\t\t%d\t\t\t\t%d\t\t\t%d\n", linhas_instrucoes[i] ,status_instrucoes.emissao[i], status_instrucoes.leituraOP[i],
-        status_instrucoes.execucao[i], status_instrucoes.escrita[i]);
+        fprintf(arq, "%s\t\t\t", linhas_instrucoes[i]);
+        if(status_instrucoes.emissao[i] != 0){
+            fprintf(arq, "%d\t\t\t", status_instrucoes.emissao[i]);
+        }
+        if(status_instrucoes.leituraOP[i] != 0){ 
+            fprintf(arq, "%d\t\t\t\t", status_instrucoes.leituraOP[i]);
+        }
+        if(status_instrucoes.execucao[i] != 0){
+            fprintf(arq, "%d\t\t\t", status_instrucoes.execucao[i]);
+        }
+        if(status_instrucoes.escrita[i] != 0){
+            fprintf(arq, "%d", status_instrucoes.escrita[i]);
+        }
+        fprintf(arq, "\n");
+    //    fprintf(arq, "%s\t\t\t%d\t\t\t%d\t\t\t\t%d\t\t\t%d\n", linhas_instrucoes[i] ,status_instrucoes.emissao[i], status_instrucoes.leituraOP[i],
+    //     status_instrucoes.execucao[i], status_instrucoes.escrita[i]);
     }
     fprintf(arq, "\n2) status das unidades funcionais\n\n");
     fprintf(arq, "\nuf\t|busy\t|op\t|fi\t|fj\t|fk\t|qj\t|qk\t|rj\t|rk\n");
@@ -56,12 +71,21 @@ void escrever_saida(FILE* arq, int PC, char linhas_instrucoes[][64]){
     fprintf(arq, "\n");
     fprintf(arq, "4) banco de registradores \n \n");
     fprintf(arq, "$t0\t|$t1\t|$t2\t|$t3\t|$t4\t|$t5\t|$t6\t|$t7\t|$s0\t|$s1\t|$s2\t|$s3\t|$s4\t|$s5\t|$s6\t|$s7\t|$t8\t|$t9\t\n");
-    fprintf(arq, "%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t\n\n",
-    banco_registradores[8], banco_registradores[9],  banco_registradores[10], banco_registradores[11],
-    banco_registradores[12], banco_registradores[13],  banco_registradores[14], banco_registradores[15],
-    banco_registradores[16], banco_registradores[17],  banco_registradores[18], banco_registradores[19], 
-    banco_registradores[20], banco_registradores[21], banco_registradores[22], banco_registradores[23],
-    banco_registradores[24], banco_registradores[25]);
+    for(int i = 8; i < 26; i++){
+        if(flag_registradores[i]){
+            fprintf(arq, "%d\t", banco_registradores[i]);
+        }else{
+            fprintf(arq, "\t");
+        }
+    }
+    fprintf(arq, "\n\n");
+    
+    // fprintf(arq, "%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t\n\n",
+    // banco_registradores[8], banco_registradores[9],  banco_registradores[10], banco_registradores[11],
+    // banco_registradores[12], banco_registradores[13],  banco_registradores[14], banco_registradores[15],
+    // banco_registradores[16], banco_registradores[17],  banco_registradores[18], banco_registradores[19], 
+    // banco_registradores[20], banco_registradores[21], banco_registradores[22], banco_registradores[23],
+    // banco_registradores[24], banco_registradores[25]);
 }
 
 char* converteNomeUF(int codigo_UF){

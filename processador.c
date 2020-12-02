@@ -9,6 +9,8 @@ int banco_registradores[32]; // Banco de registradores
 UnidadeFuncional vetor_UF[5]; // Unidades Funcionais
 enum UF status_dos_registradores[32]; // Status dos Registradores
 
+bool flag_registradores[32];
+
 
 // Estrutura Auxiliar da Emissao
 emissoes lista_emissoes;
@@ -103,11 +105,9 @@ void decodificacao(instrucaoBuscada instrucao_buscada,instrucaoDecodificada *ins
 
 bool emissao(instrucaoDecodificada instrucao_decodificada){
     if (strcmp(vetor_UF[instrucao_decodificada.indice_UF].busy, "sim") == 0) {
-        printf("Nao conseguiu emitir\n");
         return false;
 
     } else {
-        printf("Conseguiu emitir!\n");
         preencheStatusUF(instrucao_decodificada.indice_UF, instrucao_decodificada.instrucao_completa, instrucao_decodificada.opcode);//
         lista_emissoes.opcodes_emitidos[instrucao_decodificada.indice_UF] = instrucao_decodificada.opcode;
         lista_emissoes.instrucoes_emitidas[instrucao_decodificada.indice_UF] = instrucao_decodificada.instrucao_completa;//
@@ -141,30 +141,34 @@ void leituraOperandos(listaExecucao instrucoes_prontas[5], int PC, int* memoria)
 
 void execucao(listaExecucao instrucoes_prontas[5], instrucaoExecutando lista_instrucoes_executando[5], resultadoExec lista_resultados[5]){
     /* Testar D+ */
-    executaUF(instrucoes_prontas[Mult1], lista_instrucoes_executando[Mult1], lista_resultados[Mult1]);
-    executaUF(instrucoes_prontas[Mult2], lista_instrucoes_executando[Mult2], lista_resultados[Mult2]);
-    executaUF(instrucoes_prontas[Add], lista_instrucoes_executando[Add], lista_resultados[Add]);
-    executaUF(instrucoes_prontas[Div], lista_instrucoes_executando[Div], lista_resultados[Div]);
-    executaUF(instrucoes_prontas[Log], lista_instrucoes_executando[Log], lista_resultados[Log]);
+    printf("cheguei\n");
+    executaUF(&instrucoes_prontas[Mult1], &lista_instrucoes_executando[Mult1], &lista_resultados[Mult1]);
+    executaUF(&instrucoes_prontas[Mult2], &lista_instrucoes_executando[Mult2], &lista_resultados[Mult2]);
+    executaUF(&instrucoes_prontas[Add], &lista_instrucoes_executando[Add], &lista_resultados[Add]);
+    executaUF(&instrucoes_prontas[Div], &lista_instrucoes_executando[Div], &lista_resultados[Div]);
+    executaUF(&instrucoes_prontas[Log], &lista_instrucoes_executando[Log], &lista_resultados[Log]);
 }
 
-void executaUF(listaExecucao instrucao_pronta, instrucaoExecutando instrucao_executando,resultadoExec resultado){
-    if(instrucao_pronta.PC != -1 && instrucao_pronta.ja_executou == false) {
-        instrucao_executando.ciclos_restantes = opcodeParaNumCiclos(instrucao_pronta.opcode) - 1;
-        instrucao_executando.clock_inicio = instrucao_pronta.clock_lido + 1;
-        instrucao_pronta.ja_executou = true; // comecou a execucao
+void executaUF(listaExecucao *instrucao_pronta, instrucaoExecutando *instrucao_executando,resultadoExec *resultado){
+    printf("PC %d\n", instrucao_pronta->PC);
+    printf("Ciclos %d\n", instrucao_executando->ciclos_restantes);
+
+    if(instrucao_pronta->PC != -1 && instrucao_pronta->ja_executou == false) {
+        instrucao_executando->ciclos_restantes = opcodeParaNumCiclos(instrucao_pronta->opcode) - 1;
+        instrucao_executando->clock_inicio = instrucao_pronta->clock_lido + 1;
+        instrucao_pronta->ja_executou = true; // comecou a execucao
     }
 
-    if(instrucao_executando.ciclos_restantes == 0){
-        resultado.resultado = executaInstrucao(instrucao_pronta);
-        resultado.ciclo_termino = clock;
-        resultado.reg_destino = instrucao_pronta.destino;
-        resultado.PC = instrucao_pronta.PC;
-        preencheStatusInstrucoes(EXECUCAO, instrucao_pronta.PC);
+    if(instrucao_executando->ciclos_restantes == 0){
+        resultado->resultado = executaInstrucao(*instrucao_pronta);
+        resultado->ciclo_termino = clock;
+        resultado->reg_destino = instrucao_pronta->destino;
+        resultado->PC = instrucao_pronta->PC;
+        preencheStatusInstrucoes(EXECUCAO, instrucao_pronta->PC);
 
-        instrucao_executando.ciclos_restantes -= 1;
-    }else{
-        instrucao_executando.ciclos_restantes -= 1;
+        instrucao_executando->ciclos_restantes -= 1;
+    }else if(instrucao_executando->ciclos_restantes > 0){
+        instrucao_executando->ciclos_restantes -= 1;
     }
 }
 
@@ -183,6 +187,7 @@ void escritaResultados(resultadoExec lista_resultados[5], int instrucoes_escrita
         }
         instrucoes_escritas[i] = 1;
         banco_registradores[lista_resultados[i].reg_destino] = lista_resultados[i].resultado;
+        flag_registradores[lista_resultados[i].reg_destino] = true;
         preencheStatusInstrucoes(ESCRITA, lista_resultados[i].PC);
     }
 }
@@ -548,6 +553,7 @@ void initScoreboarding(int* memoria, int tamanho_memoria, listaExecucao instruco
     for(int i = 0; i < 32; i++){
         banco_registradores[i] = 0;
         status_dos_registradores[i] = -1;
+        flag_registradores[i] = false;
     }
 }
 

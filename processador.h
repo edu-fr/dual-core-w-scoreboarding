@@ -71,6 +71,6 @@ void limpaBusca(instrucaoBuscada *instrucao_buscada);
 
 void limpaDecodificacao(instrucaoDecodificada *instrucao_decodificada);
 
-void executaUF(listaExecucao instrucao_pronta, instrucaoExecutando instrucao_executando,resultadoExec resultado);
+void executaUF(listaExecucao *instrucao_pronta, instrucaoExecutando *instrucao_executando,resultadoExec *resultado);
 
 #endif
