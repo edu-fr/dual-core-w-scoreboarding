@@ -44,11 +44,8 @@ void scoreboarding(int *memoria, int tamanho_memoria, char* nome_arq_saida, char
             if(instrucao_buscada.instrucao == 0){
                 instrucao_buscada.instrucao = busca(memoria,PC); 
                 instrucao_buscada.PC_busca = PC;
-                printf("buscou a instrucao PC %d no clock: %d\n", instrucao_buscada.PC_busca, clock);
     
                 decodificacao(instrucao_buscada,&instrucao_decodificada);
-                printf("opcode instrucao decod: %d\n", instrucao_decodificada.opcode);
-                printf("no clock: %d\n", clock);    
             }
         }
 
@@ -57,11 +54,8 @@ void scoreboarding(int *memoria, int tamanho_memoria, char* nome_arq_saida, char
                     limpaBusca(&instrucao_buscada);
                     limpaDecodificacao(&instrucao_decodificada);
                     PC+=1;
-                    printf("limpou\n");
-                    printf("no clock: %d\n", clock);
                 }
                 else {
-                    printf("retornou false no clock: %d\n", clock);
             }
         }
 
@@ -70,6 +64,8 @@ void scoreboarding(int *memoria, int tamanho_memoria, char* nome_arq_saida, char
         atualizaDependencias();
         //checa se alguma Unidade Funcional ainda tem processos a fazer
         acabou_de_executar = verificaTermino(PC, tamanho_memoria, instrucao_decodificada);
+        if(clock == 60) exit(1);
+
         clock += 1;        
     } while(!acabou_de_executar);
 
@@ -90,7 +86,6 @@ void limpaDecodificacao(instrucaoDecodificada *instrucao_decodificada){
 }
 
 int busca(int *memoria,int PC){ // retorna a instrucao na posicao de pc
-    printf("MEMORIA PC: %d \n", memoria[PC]);
     int instrucao_buscada = memoria[PC];
     return instrucao_buscada;
 }
@@ -151,7 +146,6 @@ void leituraOperandos(listaExecucao instrucoes_prontas[5], int PC, int* memoria)
 
 void execucao(listaExecucao instrucoes_prontas[5], instrucaoExecutando lista_instrucoes_executando[5], resultadoExec lista_resultados[5]){
     /* Testar D+ */
-    printf("cheguei\n");
     executaUF(&instrucoes_prontas[Mult1], &lista_instrucoes_executando[Mult1], &lista_resultados[Mult1]);
     executaUF(&instrucoes_prontas[Mult2], &lista_instrucoes_executando[Mult2], &lista_resultados[Mult2]);
     executaUF(&instrucoes_prontas[Add], &lista_instrucoes_executando[Add], &lista_resultados[Add]);
@@ -160,8 +154,6 @@ void execucao(listaExecucao instrucoes_prontas[5], instrucaoExecutando lista_ins
 }
 
 void executaUF(listaExecucao *instrucao_pronta, instrucaoExecutando *instrucao_executando,resultadoExec *resultado){
-    printf("PC %d\n", instrucao_pronta->PC);
-    printf("Ciclos %d\n", instrucao_executando->ciclos_restantes);
 
     if(instrucao_pronta->PC != -1 && instrucao_pronta->ja_executou == false) {
         instrucao_executando->ciclos_restantes = opcodeParaNumCiclos(instrucao_pronta->opcode) - 1;
@@ -190,9 +182,32 @@ bool liberaLeitura(int i){
     return false;
 }
 
+bool verificaWAR(int reg_destino, int indice_UF){
+    for(int i = 0; i < 5; i++){
+        if(i != indice_UF){
+            if(lista_emissoes.PC_emitido[indice_UF] > lista_emissoes.PC_emitido[i]){
+                if(reg_destino == vetor_UF[i].Fj || reg_destino == vetor_UF[i].Fk){
+                    printf("%d destino", reg_destino);
+                    if(!strcmp(vetor_UF[i].Rj, "sim") && !strcmp(vetor_UF[i].Rk, "sim")){
+                        return false;
+                    }
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+
 void escritaResultados(resultadoExec lista_resultados[5], int instrucoes_escritas[5]){
     for (int i = 0; i < 5; i++) {
         if(lista_resultados[i].ciclo_termino == -1){
+            continue;
+        }
+        printf("vetor_UF %d\n", vetor_UF[i].Fi);
+        if(verificaWAR(vetor_UF[i].Fi, i)){
+            printf("sai do WAR\n");
             continue;
         }
         instrucoes_escritas[i] = 1;
@@ -223,11 +238,13 @@ void atualizaDependencias(){
 
 int verificaRegistradorOcupado(int8_t registrador, int indice_UF){
     for(int i = 0; i < 5; i++){
-        if(vetor_UF[i].Fi == registrador && vetor_UF[i].Fi != -1){
-            if(i == indice_UF){
-                continue; //indice igual o da propria UF -> registrador destino eh a fonte 
+        if(lista_emissoes.PC_emitido[indice_UF] > lista_emissoes.PC_emitido[i]){
+            if(vetor_UF[i].Fi == registrador && vetor_UF[i].Fi != -1){
+                if(i == indice_UF){
+                    continue; //indice igual o da propria UF -> registrador destino eh a fonte 
+                }
+                return i;
             }
-            return i;
         }
     }
     return -1;
