@@ -44,7 +44,6 @@ void scoreboarding(int *memoria, int tamanho_memoria, char* nome_arq_saida, char
             if(instrucao_buscada.instrucao == 0){
                 instrucao_buscada.instrucao = busca(memoria,PC); 
                 instrucao_buscada.PC_busca = PC;
-                PC+=1;
                 printf("buscou a instrucao PC %d no clock: %d\n", instrucao_buscada.PC_busca, clock);
     
                 decodificacao(instrucao_buscada,&instrucao_decodificada);
@@ -57,6 +56,7 @@ void scoreboarding(int *memoria, int tamanho_memoria, char* nome_arq_saida, char
             if(emissao(instrucao_decodificada)){
                     limpaBusca(&instrucao_buscada);
                     limpaDecodificacao(&instrucao_decodificada);
+                    PC+=1;
                     printf("limpou\n");
                     printf("no clock: %d\n", clock);
                 }
@@ -102,11 +102,21 @@ void decodificacao(instrucaoBuscada instrucao_buscada,instrucaoDecodificada *ins
     instrucao_decodificada->PC_busca = instrucao_buscada.PC_busca;
 }
 
+bool verificaWAW(int destino_nova){
+    for(int i  =  0; i < 5; i++){
+        if(vetor_UF[i].Fi == destino_nova){
+            return true;
+        }
+    }
+    return false;
+}
 
 bool emissao(instrucaoDecodificada instrucao_decodificada){
+    int destino_nova = recuperaCampo(instrucao_decodificada.instrucao_completa, 5, 26);
     if (strcmp(vetor_UF[instrucao_decodificada.indice_UF].busy, "sim") == 0) {
         return false;
-
+    }if (verificaWAW(destino_nova)){
+        return false;
     } else {
         preencheStatusUF(instrucao_decodificada.indice_UF, instrucao_decodificada.instrucao_completa, instrucao_decodificada.opcode);//
         lista_emissoes.opcodes_emitidos[instrucao_decodificada.indice_UF] = instrucao_decodificada.opcode;

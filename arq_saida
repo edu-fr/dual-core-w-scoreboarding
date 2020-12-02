@@ -31,7 +31,6 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 add $t1 $s0 $t0			1			2				
-addi $s4 $s5 10			
 
 2) status das unidades funcionais
 
@@ -59,7 +58,6 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 add $t1 $s0 $t0			1			2				
-addi $s4 $s5 10			
 
 2) status das unidades funcionais
 
@@ -87,7 +85,6 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 add $t1 $s0 $t0			1			2				
-addi $s4 $s5 10			
 
 2) status das unidades funcionais
 
@@ -115,7 +112,6 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 add $t1 $s0 $t0			1			2				
-addi $s4 $s5 10			
 
 2) status das unidades funcionais
 
@@ -143,7 +139,6 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 add $t1 $s0 $t0			1			2				
-addi $s4 $s5 10			
 
 2) status das unidades funcionais
 
@@ -171,7 +166,6 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 add $t1 $s0 $t0			1			2				
-addi $s4 $s5 10			
 
 2) status das unidades funcionais
 
@@ -199,7 +193,6 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 add $t1 $s0 $t0			1			2				
-addi $s4 $s5 10			
 
 2) status das unidades funcionais
 
@@ -227,7 +220,6 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 add $t1 $s0 $t0			1			2				
-addi $s4 $s5 10			
 
 2) status das unidades funcionais
 
@@ -255,7 +247,6 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 add $t1 $s0 $t0			1			2				
-addi $s4 $s5 10			
 
 2) status das unidades funcionais
 
@@ -283,7 +274,6 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 add $t1 $s0 $t0			1			2				
-addi $s4 $s5 10			
 
 2) status das unidades funcionais
 
@@ -311,7 +301,6 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 add $t1 $s0 $t0			1			2				12			
-addi $s4 $s5 10			
 
 2) status das unidades funcionais
 
@@ -339,7 +328,6 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 add $t1 $s0 $t0			1			2				12			13
-addi $s4 $s5 10			
 
 2) status das unidades funcionais
 

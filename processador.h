@@ -73,4 +73,6 @@ void limpaDecodificacao(instrucaoDecodificada *instrucao_decodificada);
 
 void executaUF(listaExecucao *instrucao_pronta, instrucaoExecutando *instrucao_executando,resultadoExec *resultado);
 
+bool verificaWAW(int destino_nova);
+
 #endif
