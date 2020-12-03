@@ -64,7 +64,6 @@ void scoreboarding(int *memoria, int tamanho_memoria, char* nome_arq_saida, char
         atualizaDependencias();
         //checa se alguma Unidade Funcional ainda tem processos a fazer
         acabou_de_executar = verificaTermino(PC, tamanho_memoria, instrucao_decodificada);
-        if(clock == 60) exit(1);
 
         clock += 1;        
     } while(!acabou_de_executar);
