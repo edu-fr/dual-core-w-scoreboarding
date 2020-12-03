@@ -14,6 +14,7 @@ bool flag_registradores[32];
 
 // Estrutura Auxiliar da Emissao
 emissoes lista_emissoes;
+int clock_instrucoes_lidas[5];
 
 void scoreboarding(int *memoria, int tamanho_memoria, char* nome_arq_saida, char linhas_instrucoes[][64]) {    
     //Estruturas Auxiliares
@@ -35,6 +36,7 @@ void scoreboarding(int *memoria, int tamanho_memoria, char* nome_arq_saida, char
     
     
     do {
+        printf("\n======== CLOCK %d ========\n", clock);
         escritaResultados(lista_resultados, instrucoes_escritas);
         execucao(instrucoes_prontas, lista_instrucoes_executando, lista_resultados);
         leituraOperandos(instrucoes_prontas, PC - 1, memoria);
@@ -137,6 +139,8 @@ void leituraOperandos(listaExecucao instrucoes_prontas[5], int PC, int* memoria)
                 instrucoes_prontas[i].operando2 = vetor_UF[i].Fk;
                 instrucoes_prontas[i].ja_executou = false;
                 instrucoes_prontas[i].clock_lido = clock;
+                clock_instrucoes_lidas[i] = clock;
+                printf("\nInstrucao n %d foi lida no clock %d! \n", PC, instrucoes_prontas[i].clock_lido);
                 preencheStatusInstrucoes(LEITURA_OPERANDOS, lista_emissoes.PC_emitido[i]);
             }
         } 
@@ -181,17 +185,53 @@ bool liberaLeitura(int i){
     return false;
 }
 
-bool verificaWAR(int reg_destino, int indice_UF){
-    for(int i = 0; i < 5; i++){
-        if(i != indice_UF){
-            if(lista_emissoes.PC_emitido[indice_UF] > lista_emissoes.PC_emitido[i]){
-                if(reg_destino == vetor_UF[i].Fj || reg_destino == vetor_UF[i].Fk){
-                    printf("%d destino", reg_destino);
-                    if(!strcmp(vetor_UF[i].Rj, "sim") && !strcmp(vetor_UF[i].Rk, "sim")){
+bool verificaWAR(int reg_destino, int indice_UF_atual){
+    for(int i = 0; i < 5; i++){ // verifica se algum dos outros 4 registradores vai utilizar na leitura o reg destino atual
+        if(i == indice_UF_atual){ // não conflita com ele mesmo
+            continue;
+        }
+        if(lista_emissoes.PC_emitido[indice_UF_atual] > lista_emissoes.PC_emitido[i]){ // só verifica a leitura em inst passadas
+            printf("Entrei sim i = %d \n", i);
+            if(reg_destino == vetor_UF[i].Fj || reg_destino == vetor_UF[i].Fk){ // encontrou war
+                printf("Encontrou WAR na op que está na UF %s\n", converteNomeUF(indice_UF_atual));
+    
+                if(!strcmp(vetor_UF[i].Rj, "sim") && !strcmp(vetor_UF[i].Rk, "sim")){ //
+                    printf("CLOCK LIDO = %d CLOCK ATUAL = %d \n", clock_instrucoes_lidas[i], clock);
+                    if(clock > clock_instrucoes_lidas[i]){
+                        if(clock_instrucoes_lidas[i] != -1){
+                            printf("Deu certo, falsezada\n");
+                            return false;
+                        }
+                        printf("Motivo: clock_lido == -1\n");
+                        return true;
+                    }
+                    printf("Motivo: clock lido < clock atual, pois %d (clock lido) é menor que %d (clock atual)\n", clock_instrucoes_lidas[i], clock);
+                    return true;                    
+                }
+                printf("Porque o strcmp deu errado!\n");
+                return true;
+                
+                /*
+                if(clock_instrucoes_lidas[i] == -1) {
+                    printf("Motivo: clock_lido == -1\n");
+                    return true;
+                } else {
+                
+                    if(clock_instrucoes_lidas[i] >= clock){
+                        printf("Motivo: clock lido < clock atual, pois %d (clock lido) é menor que %d (clock atual)\n", clock_instrucoes_lidas[i], clock);
+                        return true;
+                    } else {
+                        clock_instrucoes_lidas[i] = -1;
                         return false;
                     }
-                    return true;
+                */
+            
+                /*
+                if(!strcmp(vetor_UF[i].Rj, "sim") && !strcmp(vetor_UF[i].Rk, "sim")){ //
+                    return false;
                 }
+                return true;
+                */
             }
         }
     }
@@ -204,9 +244,8 @@ void escritaResultados(resultadoExec lista_resultados[5], int instrucoes_escrita
         if(lista_resultados[i].ciclo_termino == -1){
             continue;
         }
-        printf("vetor_UF %d\n", vetor_UF[i].Fi);
         if(verificaWAR(vetor_UF[i].Fi, i)){
-            printf("sai do WAR\n");
+            printf("Tem WAR na instrucao que está na UF %s, no clock %d\n", converteNomeUF(i), clock);
             continue;
         }
         instrucoes_escritas[i] = 1;
@@ -291,7 +330,6 @@ void limpaAuxiliares(int indice,resultadoExec lista_resultados[5], listaExecucao
         lista_resultados[indice].reg_destino = -1;
         lista_resultados[indice].resultado = -1;
 
-
         instrucoes_prontas[indice].clock_lido = -1;
         instrucoes_prontas[indice].destino = -1;
         instrucoes_prontas[indice].instrucao = -1;
@@ -300,6 +338,8 @@ void limpaAuxiliares(int indice,resultadoExec lista_resultados[5], listaExecucao
         instrucoes_prontas[indice].operando1 = -1;
         instrucoes_prontas[indice].operando2 = -1;
         instrucoes_prontas[indice].PC = -1;
+
+        clock_instrucoes_lidas[indice] = -1;
 
         lista_instrucoes_executando[indice].ciclos_restantes = -1;
         lista_instrucoes_executando[indice].clock_inicio = -1;
@@ -574,6 +614,7 @@ void initScoreboarding(int* memoria, int tamanho_memoria, listaExecucao instruco
         lista_emissoes.PC_emitido[i] = -1;
 
         instrucoes_escritas[i] = -1;
+        clock_instrucoes_lidas[i] = -1;
     }
 
     for(int i = 0; i < 32; i++){

@@ -775,7 +775,38 @@ li $t8 5			1			2				6			7
 li $t1 10			8			9				13			14
 div $t0 $t8 $t1			9			15				25			26
 add $t2 $t0 $t8			10			27				
-move $t8 $t5			15			16				17			27
+move $t8 $t5			15			16				17			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|sim	add	$t2	$t0	$t8	DIV		sim	sim
+div	|nao								
+log	|sim	move	$t8	$t5				sim	
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf			ADD														LOG	
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0	10															5		
+
+--------------------- ciclo 28 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $t8 5			1			2				6			7
+li $t1 10			8			9				13			14
+div $t0 $t8 $t1			9			15				25			26
+add $t2 $t0 $t8			10			27				
+move $t8 $t5			15			16				17			28
 
 2) status das unidades funcionais
 
@@ -797,37 +828,6 @@ uf			ADD														LOG
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
 0	10															0		
 
---------------------- ciclo 28 ----------------------- 
- 
-1) status das instrucoes 
- 
-				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
-li $t8 5			1			2				6			7
-li $t1 10			8			9				13			14
-div $t0 $t8 $t1			9			15				25			26
-add $t2 $t0 $t8			10			27				
-move $t8 $t5			15			16				17			27
-
-2) status das unidades funcionais
-
-
-uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
-mult1	|nao								
-mult2	|nao								
-add	|sim	add	$t2	$t0	$t8	DIV		sim	sim
-div	|nao								
-log	|nao								
-
-3) status dos registradores 
- 
-	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-uf			ADD															
-
-4) banco de registradores 
- 
-$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	10															0		
-
 --------------------- ciclo 29 ----------------------- 
  
 1) status das instrucoes 
@@ -837,7 +837,7 @@ li $t8 5			1			2				6			7
 li $t1 10			8			9				13			14
 div $t0 $t8 $t1			9			15				25			26
 add $t2 $t0 $t8			10			27				
-move $t8 $t5			15			16				17			27
+move $t8 $t5			15			16				17			28
 
 2) status das unidades funcionais
 
@@ -868,7 +868,7 @@ li $t8 5			1			2				6			7
 li $t1 10			8			9				13			14
 div $t0 $t8 $t1			9			15				25			26
 add $t2 $t0 $t8			10			27				
-move $t8 $t5			15			16				17			27
+move $t8 $t5			15			16				17			28
 
 2) status das unidades funcionais
 
@@ -899,7 +899,7 @@ li $t8 5			1			2				6			7
 li $t1 10			8			9				13			14
 div $t0 $t8 $t1			9			15				25			26
 add $t2 $t0 $t8			10			27				
-move $t8 $t5			15			16				17			27
+move $t8 $t5			15			16				17			28
 
 2) status das unidades funcionais
 
@@ -930,7 +930,7 @@ li $t8 5			1			2				6			7
 li $t1 10			8			9				13			14
 div $t0 $t8 $t1			9			15				25			26
 add $t2 $t0 $t8			10			27				
-move $t8 $t5			15			16				17			27
+move $t8 $t5			15			16				17			28
 
 2) status das unidades funcionais
 
@@ -961,7 +961,7 @@ li $t8 5			1			2				6			7
 li $t1 10			8			9				13			14
 div $t0 $t8 $t1			9			15				25			26
 add $t2 $t0 $t8			10			27				
-move $t8 $t5			15			16				17			27
+move $t8 $t5			15			16				17			28
 
 2) status das unidades funcionais
 
@@ -992,7 +992,7 @@ li $t8 5			1			2				6			7
 li $t1 10			8			9				13			14
 div $t0 $t8 $t1			9			15				25			26
 add $t2 $t0 $t8			10			27				
-move $t8 $t5			15			16				17			27
+move $t8 $t5			15			16				17			28
 
 2) status das unidades funcionais
 
@@ -1023,7 +1023,7 @@ li $t8 5			1			2				6			7
 li $t1 10			8			9				13			14
 div $t0 $t8 $t1			9			15				25			26
 add $t2 $t0 $t8			10			27				
-move $t8 $t5			15			16				17			27
+move $t8 $t5			15			16				17			28
 
 2) status das unidades funcionais
 
@@ -1054,7 +1054,7 @@ li $t8 5			1			2				6			7
 li $t1 10			8			9				13			14
 div $t0 $t8 $t1			9			15				25			26
 add $t2 $t0 $t8			10			27				
-move $t8 $t5			15			16				17			27
+move $t8 $t5			15			16				17			28
 
 2) status das unidades funcionais
 
@@ -1085,7 +1085,7 @@ li $t8 5			1			2				6			7
 li $t1 10			8			9				13			14
 div $t0 $t8 $t1			9			15				25			26
 add $t2 $t0 $t8			10			27				37			
-move $t8 $t5			15			16				17			27
+move $t8 $t5			15			16				17			28
 
 2) status das unidades funcionais
 
@@ -1116,7 +1116,7 @@ li $t8 5			1			2				6			7
 li $t1 10			8			9				13			14
 div $t0 $t8 $t1			9			15				25			26
 add $t2 $t0 $t8			10			27				37			38
-move $t8 $t5			15			16				17			27
+move $t8 $t5			15			16				17			28
 
 2) status das unidades funcionais
 
@@ -1147,7 +1147,7 @@ li $t8 5			1			2				6			7
 li $t1 10			8			9				13			14
 div $t0 $t8 $t1			9			15				25			26
 add $t2 $t0 $t8			10			27				37			38
-move $t8 $t5			15			16				17			27
+move $t8 $t5			15			16				17			28
 
 2) status das unidades funcionais
 
