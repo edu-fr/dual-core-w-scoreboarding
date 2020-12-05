@@ -1,0 +1,6 @@
+addi $s1 $s1 10
+addi $t3 $t3 11
+addi $t1 $t1 12
+addi $s0 $s0 13
+add $t0 $s1 $t3
+mult $t0 $t1 $s0

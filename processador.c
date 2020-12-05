@@ -109,9 +109,21 @@ bool verificaWAW(int destino_nova){
 
 bool emissao(instrucaoDecodificada instrucao_decodificada){
     int destino_nova = recuperaCampo(instrucao_decodificada.instrucao_completa, 5, 26);
+    
+    if(instrucao_decodificada.indice_UF == 0){          // É uma instrucao mult
+        if(strcmp(vetor_UF[0].busy, "nao") == 0){       // Se UF Mult1 está livre, então 
+            // indice UF continua sendo 0
+        } else {                                        // se UF Mult1 está ocupada, testa UF Mult2
+            if(strcmp(vetor_UF[1].busy, "nao") == 0){
+                instrucao_decodificada.indice_UF = 1;
+            }
+        }  
+    } 
+        
     if (strcmp(vetor_UF[instrucao_decodificada.indice_UF].busy, "sim") == 0) {
-        return false;
-    }if (verificaWAW(destino_nova)){
+            return false;
+    }
+    if (verificaWAW(destino_nova)){
         return false;
     } else {
         preencheStatusUF(instrucao_decodificada.indice_UF, instrucao_decodificada.instrucao_completa, instrucao_decodificada.opcode);//
@@ -449,9 +461,11 @@ int opcodeParaUF(int opcode){
     else if(opcode == DIV) return Div;
     else if(opcode == AND || opcode == ANDI || opcode == OR || opcode == ORI || opcode == SLT || opcode == LI || opcode == MOVE) return Log;
     else if(opcode == MULT){
+        /*
         if(strcmp(vetor_UF[Mult1].busy, "sim") == 0){
             return Mult2;
         }
+        */
         return Mult1;
     }
     return -1;
