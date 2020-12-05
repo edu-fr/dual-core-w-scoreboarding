@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdbool.h>
 #include <string.h>
+#include <pthread.h>
 
 enum opcode {ADD = 32, ADDI = 8, AND = 36, ANDI = 12, OR = 37, ORI = 13, SLT = 42, SUB = 34, MULT = 24, DIV = 26, 
 LI = 20, MOVE = 30};
@@ -76,6 +77,18 @@ typedef struct{
     int instrucoes_emitidas[5]; // indice de acordo com a UF que será utilizada
     int PC_emitido[5]; 
 } emissoes;
+
+typedef struct{
+    pthread_t thread_id; 
+    int thread_num;
+
+    listaExecucao instrucoes_prontas[5];
+    instrucaoExecutando lista_instrucoes_executando[5];
+    resultadoExec lista_resultados[5];
+    int instrucoes_escritas[5];
+    instrucaoBuscada instrucao_buscada; 
+    instrucaoDecodificada instrucao_decodificada;
+} threadInfo;
 
 int num_ciclos_ADD, num_ciclos_ADDI, num_ciclos_AND,
     num_ciclos_ANDI, num_ciclos_OR, num_ciclos_ORI, num_ciclos_SLT, num_ciclos_SUB,

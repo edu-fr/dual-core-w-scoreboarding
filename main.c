@@ -18,19 +18,20 @@ void mostrarAjuda(char *name) { // ok
             -h              		mostra ajuda.\n\
             -c CONFIG       		nome do arquivo de configuracao.\n\
             -o SAIDA        		nome do arquivo de saida.\n\
-            -p PROGRAMA     		nome do programa a ser executado .\n\
-            -m TAMANHO DA MEMORIA 	inteiro correspondente ao numero de instrucoes no arquivo de programa. \n", name) ;
+            -p PROGRAMA 1    		nome do 1o programa a ser executado .\n\
+            -r PROGRAMA 2    		nome do 2o programa a ser executado .\n\
+            -m TAMANHO DA MEMORIA 1	inteiro correspondente ao numero de instrucoes no arquivo de programa 1. \n\
+            -n TAMANHO DA MEMORIA 2	inteiro correspondente ao numero de instrucoes no arquivo de programa 2. \n", name) ;
     exit(-1) ;
 }
 
-
 int main(int argc, char **argv){ 
-    int opt, tamanho_memoria;
-    char *config, *saida, *programa, *str_tamanho_memoria;
+    int opt, tamanho_memoria_1, tamanho_memoria_2;
+    char *config, *saida, *programa_1, *programa_2, *str_tamanho_memoria_1, *str_tamanho_memoria_2;
 
     if ( argc < 2 ) mostrarAjuda(argv[0]);
 
-    while( (opt = getopt(argc, argv, "hc:o:p:m:")) > 0 ) {
+    while( (opt = getopt(argc, argv, "hc:o:p:r:m:n")) > 0 ) {
         switch ( opt ) {
             case 'h': /* help */
                 mostrarAjuda(argv[0]);
@@ -42,31 +43,52 @@ int main(int argc, char **argv){
                 saida = optarg;
                 break;
             case 'p': /* opção -p */
-                programa = optarg;
+                programa_1 = optarg;
                 break;
+
+            case 'r': /* opção -r */
+                programa_2 = optarg;
+                break;
+            
             case 'm': //opcao -m
-                str_tamanho_memoria = optarg;
+                str_tamanho_memoria_1 = optarg;
                 break;
+
+            case 'n': //opcao -n
+                str_tamanho_memoria_2 = optarg;
+                break;
+            
             default:
                 fprintf(stderr, "Opcao invalida ou faltando argumento: `%c'\n", optopt) ;
                 return -1;
         }
     }
 
-    tamanho_memoria = atoi(str_tamanho_memoria);
+    tamanho_memoria_1 = atoi(str_tamanho_memoria_1);
     
-    int memoria[tamanho_memoria];
+    tamanho_memoria_2 = atoi(str_tamanho_memoria_2);
+
+    int memoria_1[tamanho_memoria_1];
     
-    init(memoria, tamanho_memoria);
+    int memoria_2[tamanho_memoria_2];
+    
+    init(memoria_1, tamanho_memoria_1);
 
-    char linhas_instrucoes[tamanho_memoria][64];
+    init(memoria_2, tamanho_memoria_2);
 
-    conversor(programa, memoria, linhas_instrucoes, tamanho_memoria);
+    char linhas_instrucoes_1[tamanho_memoria_1][64];
+
+    char linhas_instrucoes_2[tamanho_memoria_2][64];
+
+    conversor(programa_1, memoria_1, linhas_instrucoes_1, tamanho_memoria_1);
+
+    conversor(programa_2, memoria_2, linhas_instrucoes_2, tamanho_memoria_2);
 
     lerArquivoConfiguracao(config);
 
-    scoreboarding(memoria, tamanho_memoria, saida, linhas_instrucoes);
+    processador(memoria_1, memoria_2, tamanho_memoria_1, tamanho_memoria_2, linhas_instrucoes_1,   linhas_instrucoes_2, saida)
+
+    scoreboarding(memoria_1, tamanho_memoria_1, saida, linhas_instrucoes_1);
+    
     
 }
-
-
