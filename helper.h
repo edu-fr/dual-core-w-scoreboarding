@@ -88,6 +88,8 @@ typedef struct{
     int instrucoes_escritas[5];
     instrucaoBuscada instrucao_buscada; 
     instrucaoDecodificada instrucao_decodificada;
+    int tamanho_memoria;
+    int *memoria;
 } threadInfo;
 
 int num_ciclos_ADD, num_ciclos_ADDI, num_ciclos_AND,

@@ -26,7 +26,7 @@ void mostrarAjuda(char *name) { // ok
 }
 
 int main(int argc, char **argv){ 
-    int opt, tamanho_memoria_1, tamanho_memoria_2;
+    int opt, tamanho_memoria[2];
     char *config, *saida, *programa_1, *programa_2, *str_tamanho_memoria_1, *str_tamanho_memoria_2;
 
     if ( argc < 2 ) mostrarAjuda(argv[0]);
@@ -64,31 +64,31 @@ int main(int argc, char **argv){
         }
     }
 
-    tamanho_memoria_1 = atoi(str_tamanho_memoria_1);
+    tamanho_memoria[0] = atoi(str_tamanho_memoria_1);
     
-    tamanho_memoria_2 = atoi(str_tamanho_memoria_2);
+    tamanho_memoria[1] = atoi(str_tamanho_memoria_2);
 
-    int memoria_1[tamanho_memoria_1];
+    int memoria_1[tamanho_memoria[0]];
     
-    int memoria_2[tamanho_memoria_2];
+    int memoria_2[tamanho_memoria[1]];
     
-    init(memoria_1, tamanho_memoria_1);
+    init(memoria_1, tamanho_memoria[0]);
 
-    init(memoria_2, tamanho_memoria_2);
+    init(memoria_2, tamanho_memoria[1]);
 
-    char linhas_instrucoes_1[tamanho_memoria_1][64];
+    char linhas_instrucoes_1[tamanho_memoria[0]][64];
 
-    char linhas_instrucoes_2[tamanho_memoria_2][64];
+    char linhas_instrucoes_2[tamanho_memoria[1]][64];
 
-    conversor(programa_1, memoria_1, linhas_instrucoes_1, tamanho_memoria_1);
+    conversor(programa_1, memoria_1, linhas_instrucoes_1, tamanho_memoria[0]);
 
-    conversor(programa_2, memoria_2, linhas_instrucoes_2, tamanho_memoria_2);
+    conversor(programa_2, memoria_2, linhas_instrucoes_2, tamanho_memoria[1]);
 
     lerArquivoConfiguracao(config);
 
-    processador(memoria_1, memoria_2, tamanho_memoria_1, tamanho_memoria_2, linhas_instrucoes_1,   linhas_instrucoes_2, saida)
+    processador(memoria_1, memoria_2, tamanho_memoria[0], tamanho_memoria[1], linhas_instrucoes_1,   linhas_instrucoes_2, saida)
 
-    scoreboarding(memoria_1, tamanho_memoria_1, saida, linhas_instrucoes_1);
+    scoreboarding(memoria_1, tamanho_memoria[0], saida, linhas_instrucoes_1);
     
     
 }

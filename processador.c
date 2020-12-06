@@ -11,36 +11,60 @@ enum UF status_dos_registradores[2][32]; // Status dos Registradores
 
 bool flag_registradores[2][32];
 
-void processador(memoria_1, memoria_2, tamanho_memoria_1, tamanho_memoria_2, linhas_instrucoes_1, linhas_instrucoes_2, saida)
+bool verifica_termino[2];
+void processador(int memoria[2], int tamanho_memoria[2], int linhas_instrucoes_[2], char *saida)
 {
     //Estruturas Auxiliares
-    threadInfo thread_info_1, thread_info_2;
-
-    bool acabou_de_executar;
+    threadInfo thread_info[2];
+    int s;
+    bool acabou_de_executar[2];
     int PC[2];
+    pthread_attr_t attr;
+    void *res;
 
     initProcessador(PC);
 
-    initNucleo(memoria_1, tamanho_memoria_1, thread_info_1);
-    initNucleo(memoria_2, tamanho_memoria_2, thread_info_2);
+    initNucleo(memoria[0], tamanho_memoria[0], thread_info[0]);
+    initNucleo(memoria[1], tamanho_memoria[1], thread_info[1]);
 
     FILE *arq_saida;
 
     arq_saida = fopen(saida, "w");
 
-    acabou_de_executar = verificaTermino(PC, tamanho_memoria, instrucao_decodificada);
+    acabou_de_executar[0] = verificaTermino(PC[0], tamanho_memoria[0], instrucao_decodificada);
 
-    do
-    {
-        pthread 1(scoreboarding(pipipi))
-            pthread 2(scoreboarding)
+    do{
+        int pthread_1 = pthread_attr_init(&attr);   
+        if (pthread_1 != 0)
+            handle_error_en(pthread_1, "pthread_attr_init");
 
-                clock += 1;
+        for (int tnum = 0; tnum < 2; tnum++) { // Criacao dos pthread's
+            thread_info[tnum].thread_num = tnum;
+            s = pthread_create(&thread_info[tnum].thread_id, &attr,
+                    &scoreboarding(thread_info[tnum]), &thread_info[tnum]);
 
-    } while (!acabou_de_executar_1);
+            if (s != 0)
+            handle_error_en(s, "pthread_create");
+        }
 
-    saida(arq_saida, tamanho_memoria, linhas_instrucoes_1, linhas_intrucoes_2);
+        s = pthread_attr_destroy(&attr);
+        if (s != 0)
+            handle_error_en(s, "pthread_attr_destroy");
+        
+        for (int i = 0; i < 2; i++) {
+            s = pthread_join(thread_info[i].thread_id, &res);
+            if (s != 0)
+            handle_error_en(s, "pthread_join");
+
+            free(res);      /* Free memory allocated by thread */
+        }
+
+        saida(arq_saida, tamanho_memoria, linhas_instrucoes);
+        clock++;
+         
+    }while();
     fclose(arq_saida);
+    
 }
 
 void scoreboarding(threadInfo thread_info)
@@ -48,9 +72,9 @@ void scoreboarding(threadInfo thread_info)
     printf("\n======== CLOCK %d ========\n", clock);
     escritaResultados(thread_info.lista_resultados, thread_info.instrucoes_escritas);
     execucao(thread_info.instrucoes_prontas, thread_info.lista_instrucoes_executando, thread_info.lista_resultados);
-    leituraOperandos(thread_info.instrucoes_prontas, PC[thread_num] - 1, memoria);
+    leituraOperandos(thread_info.instrucoes_prontas, PC[thread_info.thread_num] - 1, memoria);
 
-    if (PC[thread_num] < thread_info.tamanho_memoria)
+    if (PC[thread_info.thread_num] < thread_info.tamanho_memoria)
     {
         if (thread_info.instrucao_buscada.instrucao == 0)
         {
@@ -61,7 +85,7 @@ void scoreboarding(threadInfo thread_info)
         }
     }
 
-    if (instrucao_decodificada.instrucao_completa != 0)
+    if (thread_info.instrucao_decodificada.instrucao_completa != 0)
     { // só emite se necessario
         if (emissao(thread_info.instrucao_decodificada))
         {
@@ -74,7 +98,9 @@ void scoreboarding(threadInfo thread_info)
     saida(arq_saida, PC,  linhas_instrucoes_1, linhas_intrucoes_2);
     limpaEstruturas(instrucoes_escritas, lista_resultados, instrucoes_prontas, lista_instrucoes_executando);
     atualizaDependencias();
+    verifica_termino[thread_num] = verificaTermino(PC[thread_num],);
     //checa se alguma Unidade Funcional ainda tem processos a fazer
+    return 0;
 }
 
 void limpaBusca(instrucaoBuscada *instrucao_buscada)
@@ -718,7 +744,8 @@ void initProcessador(int PC[2])
 
     PC[0] = 0;
     PC[1] = 0;
-
+    verifica_termino[0] = false;
+    verifica_termino[1] = false;
     for (int thread_num = 0; thread_num < 2; thread_num++)
     {
         status_instrucoes[thread_num].instrucoes = memoria; // recebe todas as instrucoes
@@ -769,7 +796,9 @@ void initNucleo(int *memoria, int tamanho_memoria, threadInfo thread_info)
 
         thread_info.instrucoes_escritas[i] = -1;
         thread_info.clock_instrucoes_lidas[i] = -1;
+        
     }
+    thread_info.tamanho_memoria = tamanho_memoria;
 
     // init estruturas auxiliares
     limpaBusca(&instrucao_buscada);

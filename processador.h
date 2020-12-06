@@ -5,6 +5,9 @@
 
 
 // ARQUIVO PROCESSADOR.C
+
+void processador(int memoria[2], int tamanho_memoria[2], int linhas_instrucoes_[2], char *saida);
+
 int busca(int *memoria,int PC);
 
 void decodificacao(instrucaoBuscada instrucao_buscada,instrucaoDecodificada *instrucao_decodificada);
@@ -41,7 +44,7 @@ bool verificaTermino(int PC, int tamanho_memoria, instrucaoDecodificada instruca
 
 int opcodeParaNumCiclos(int opcode);
 
-void scoreboarding(int *memoria, int tamanho_memoria, char* saida, char linhas_instrucoes[][64]);
+void scoreboarding(threadInfo thread_info);
 
 bool verificaMove(int opcode);
 

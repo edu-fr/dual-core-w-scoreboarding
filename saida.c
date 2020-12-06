@@ -13,11 +13,7 @@ void saida(FILE* arq_saida, int PC, char linhas_instrucoes[][64]){
     escrever_saida(arq_saida, PC, linhas_instrucoes);
 }
 
-void escrever_saida(FILE* arq, int PC, char linhas_instrucoes[][64]){
-    char nomes_UF[32][16];
-    converteStatusRegistradores(nomes_UF);
-    
-    fprintf(arq, "--------------------- ciclo %d ----------------------- \n \n", clock); //escreveu primeira linha
+void escrever_status_instrucoes(FILE* arq, int PC, char linhas_instrucoes[][64]){
     fprintf(arq, "1) status das instrucoes \n \n");
     fprintf(arq, "\t\t\t\temissao\t|\tleitura dos operandos\t|\texecucao\t|\tescrita dos resultados\t\n");   
     for(int i = 0; i < PC; i++){
@@ -38,6 +34,9 @@ void escrever_saida(FILE* arq, int PC, char linhas_instrucoes[][64]){
     //    fprintf(arq, "%s\t\t\t%d\t\t\t%d\t\t\t\t%d\t\t\t%d\n", linhas_instrucoes[i] ,status_instrucoes.emissao[i], status_instrucoes.leituraOP[i],
     //     status_instrucoes.execucao[i], status_instrucoes.escrita[i]);
     }
+}
+
+void escrever_status_UF(FILE* arq, int PC){
     fprintf(arq, "\n2) status das unidades funcionais\n\n");
     fprintf(arq, "\nuf\t|busy\t|op\t|fi\t|fj\t|fk\t|qj\t|qk\t|rj\t|rk\n");
     fprintf(arq, "mult1\t|%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n", vetor_UF[0].busy,
@@ -61,6 +60,9 @@ void escrever_saida(FILE* arq, int PC, char linhas_instrucoes[][64]){
         converteNomeRegistrador(vetor_UF[4].Fk), converteNomeUF(vetor_UF[4].Qj),
         converteNomeUF(vetor_UF[4].Qk), vetor_UF[4].Rj, vetor_UF[4].Rk);
     fprintf(arq, "\n");
+}
+
+void escrever_status_registradores(FILE* arq, int PC){
     fprintf(arq, "3) status dos registradores \n \n");
     fprintf(arq, "\t$t0\t|$t1\t|$t2\t|$t3\t|$t4\t|$t5\t|$t6\t|$t7\t|$s0\t|$s1\t|$s2\t|$s3\t|$s4\t|$s5\t|$s6\t|$s7\t|$t8\t|$t9\t\n");
     fprintf(arq, "uf\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n",
@@ -78,14 +80,21 @@ void escrever_saida(FILE* arq, int PC, char linhas_instrucoes[][64]){
             fprintf(arq, "\t");
         }
     }
-    fprintf(arq, "\n\n");
+}
+
+void escrever_saida(FILE* arq, int PC[2], char linhas_instrucoes[][][64]){
+    char nomes_UF[32][16];
+    converteStatusRegistradores(nomes_UF);
     
-    // fprintf(arq, "%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t\n\n",
-    // banco_registradores[8], banco_registradores[9],  banco_registradores[10], banco_registradores[11],
-    // banco_registradores[12], banco_registradores[13],  banco_registradores[14], banco_registradores[15],
-    // banco_registradores[16], banco_registradores[17],  banco_registradores[18], banco_registradores[19], 
-    // banco_registradores[20], banco_registradores[21], banco_registradores[22], banco_registradores[23],
-    // banco_registradores[24], banco_registradores[25]);
+    fprintf(arq, "--------------------- ciclo %d ----------------------- \n \n", clock); //escreveu primeira linha
+    for(int tnum = 0; tnum < 2; tnum++){
+        fprintf(arq, "Fluxo de processamento %d\n",tnum);
+        escrever_status_instrucoes(arq, PC[tnum],linhas_instrucoes[tnum]);
+        escrever_status_UF(arq, PC[tnum]);
+        escrever_status_registradores(arq, PC[tnum]);
+        fprintf(arq, "\n\n");
+    }
+    
 }
 
 char* converteNomeUF(int codigo_UF){
