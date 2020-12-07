@@ -1,16 +1,17 @@
 #include "saida.h"
 
-extern int clock;
-extern statusInst status_instrucoes; 
-extern UnidadeFuncional vetor_UF[5];
-extern enum UF status_dos_registradores[32];
-extern int banco_registradores[32];
-extern bool flag_registradores[32];
 
 
-void saida(FILE* arq_saida, int PC, char linhas_instrucoes[][64]){
+extern int clock_processador;
+extern statusInst status_instrucoes[2];         // Status das Instrucoes
+extern int banco_registradores[2][32];          // Banco de registradores
+extern UnidadeFuncional vetor_UF[2][5];         // Unidades Funcionais
+extern enum UF status_dos_registradores[2][32]; // Status dos Registradores
+extern bool flag_registradores[2][32];
+
+void saida(FILE* arq_saida, int PC[2], char linhas_instrucoes_1[][64], char linhas_instrucoes_2[][64]){
     fseek(arq_saida, 0, SEEK_END); //aponta pro final do arquivo
-    escrever_saida(arq_saida, PC, linhas_instrucoes);
+    escrever_saida(arq_saida, PC, linhas_instrucoes_1, linhas_instrucoes_2);
 }
 
 void escrever_status_instrucoes(FILE* arq, int PC, char linhas_instrucoes[][64]){
@@ -62,7 +63,7 @@ void escrever_status_UF(FILE* arq, int PC){
     fprintf(arq, "\n");
 }
 
-void escrever_status_registradores(FILE* arq, int PC){
+void escrever_status_registradores(FILE* arq, int PC, char nomes_UF[32][16]){
     fprintf(arq, "3) status dos registradores \n \n");
     fprintf(arq, "\t$t0\t|$t1\t|$t2\t|$t3\t|$t4\t|$t5\t|$t6\t|$t7\t|$s0\t|$s1\t|$s2\t|$s3\t|$s4\t|$s5\t|$s6\t|$s7\t|$t8\t|$t9\t\n");
     fprintf(arq, "uf\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n",
@@ -82,18 +83,23 @@ void escrever_status_registradores(FILE* arq, int PC){
     }
 }
 
-void escrever_saida(FILE* arq, int PC[2], char linhas_instrucoes[][][64]){
+void escrever_saida(FILE* arq, int PC[2], char linhas_instrucoes_1[][64], char linhas_instrucoes_2[][64]){
     char nomes_UF[32][16];
     converteStatusRegistradores(nomes_UF);
     
-    fprintf(arq, "--------------------- ciclo %d ----------------------- \n \n", clock); //escreveu primeira linha
-    for(int tnum = 0; tnum < 2; tnum++){
-        fprintf(arq, "Fluxo de processamento %d\n",tnum);
-        escrever_status_instrucoes(arq, PC[tnum],linhas_instrucoes[tnum]);
-        escrever_status_UF(arq, PC[tnum]);
-        escrever_status_registradores(arq, PC[tnum]);
-        fprintf(arq, "\n\n");
-    }
+    fprintf(arq, "--------------------- ciclo %d ----------------------- \n \n", clock_processador); //escreveu primeira linha
+    fprintf(arq, "Fluxo de processamento %d\n", FLUXO_1+1);
+    escrever_status_instrucoes(arq, PC[FLUXO_1],linhas_instrucoes_1);
+    escrever_status_UF(arq, PC[FLUXO_1]);
+    escrever_status_registradores(arq, PC[FLUXO_1], nomes_UF);
+    fprintf(arq, "\n\n");
+
+
+    fprintf(arq, "Fluxo de processamento %d\n", FLUXO_2+1);
+    escrever_status_instrucoes(arq, PC[FLUXO_2],linhas_instrucoes_2);
+    escrever_status_UF(arq, PC[FLUXO_2]);
+    escrever_status_registradores(arq, PC[FLUXO_2], nomes_UF);
+    fprintf(arq, "\n\n");
     
 }
 

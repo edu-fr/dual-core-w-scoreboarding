@@ -86,7 +86,7 @@ int main(int argc, char **argv){
 
     lerArquivoConfiguracao(config);
 
-    processador(memoria_1, memoria_2, tamanho_memoria[0], tamanho_memoria[1], linhas_instrucoes_1,   linhas_instrucoes_2, saida)
+    processador(memoria_1, memoria_2, tamanho_memoria[0], tamanho_memoria[1], linhas_instrucoes_1, linhas_instrucoes_2, saida)
 
     scoreboarding(memoria_1, tamanho_memoria[0], saida, linhas_instrucoes_1);
     

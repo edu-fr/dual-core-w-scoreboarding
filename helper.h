@@ -5,6 +5,8 @@
 #include <stdbool.h>
 #include <string.h>
 #include <pthread.h>
+#define FLUXO_1 0
+#define FLUXO_2 1
 
 enum opcode {ADD = 32, ADDI = 8, AND = 36, ANDI = 12, OR = 37, ORI = 13, SLT = 42, SUB = 34, MULT = 24, DIV = 26, 
 LI = 20, MOVE = 30};
@@ -88,9 +90,13 @@ typedef struct{
     int instrucoes_escritas[5];
     instrucaoBuscada instrucao_buscada; 
     instrucaoDecodificada instrucao_decodificada;
+    int PC;
     int tamanho_memoria;
     int *memoria;
+
 } threadInfo;
+
+
 
 int num_ciclos_ADD, num_ciclos_ADDI, num_ciclos_AND,
     num_ciclos_ANDI, num_ciclos_OR, num_ciclos_ORI, num_ciclos_SLT, num_ciclos_SUB,
@@ -99,7 +105,7 @@ int num_ciclos_ADD, num_ciclos_ADDI, num_ciclos_AND,
 // Definimos UnidadeFuncional como uma struct e criamos uma unidade funcional pra cada 
 
 // variaveis auxiliares
-extern int clock;
+extern int clock_processador;
 extern int F[32]; // Banco de registradores
 extern UnidadeFuncional vetor_UF[5];
 extern enum UF status_dos_registradores[32];
