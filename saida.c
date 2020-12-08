@@ -8,12 +8,14 @@ extern int banco_registradores[32];
 extern bool flag_registradores[32];
 
 
-void saida(FILE* arq_saida, int PC, char linhas_instrucoes[][64]){
+
+void saida(FILE* arq_saida, int PC, char** instrucoes, int* memoria, int tam_mem){
+    converteInstrucao(instrucoes, PC, memoria, tam_mem);
     fseek(arq_saida, 0, SEEK_END); //aponta pro final do arquivo
-    escrever_saida(arq_saida, PC, linhas_instrucoes);
+    escrever_saida(arq_saida, PC, instrucoes);
 }
 
-void escrever_saida(FILE* arq, int PC, char linhas_instrucoes[][64]){
+void escrever_saida(FILE* arq, int PC, char* instrucoes){
     char nomes_UF[32][16];
     converteStatusRegistradores(nomes_UF);
     
@@ -35,8 +37,6 @@ void escrever_saida(FILE* arq, int PC, char linhas_instrucoes[][64]){
             fprintf(arq, "%d", status_instrucoes.escrita[i]);
         }
         fprintf(arq, "\n");
-    //    fprintf(arq, "%s\t\t\t%d\t\t\t%d\t\t\t\t%d\t\t\t%d\n", linhas_instrucoes[i] ,status_instrucoes.emissao[i], status_instrucoes.leituraOP[i],
-    //     status_instrucoes.execucao[i], status_instrucoes.escrita[i]);
     }
     fprintf(arq, "\n2) status das unidades funcionais\n\n");
     fprintf(arq, "\nuf\t|busy\t|op\t|fi\t|fj\t|fk\t|qj\t|qk\t|rj\t|rk\n");
@@ -80,12 +80,6 @@ void escrever_saida(FILE* arq, int PC, char linhas_instrucoes[][64]){
     }
     fprintf(arq, "\n\n");
     
-    // fprintf(arq, "%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t\n\n",
-    // banco_registradores[8], banco_registradores[9],  banco_registradores[10], banco_registradores[11],
-    // banco_registradores[12], banco_registradores[13],  banco_registradores[14], banco_registradores[15],
-    // banco_registradores[16], banco_registradores[17],  banco_registradores[18], banco_registradores[19], 
-    // banco_registradores[20], banco_registradores[21], banco_registradores[22], banco_registradores[23],
-    // banco_registradores[24], banco_registradores[25]);
 }
 
 char* converteNomeUF(int codigo_UF){
@@ -184,4 +178,92 @@ void converteStatusRegistradores(char nomes_UF[32][16]){
             strcpy(nomes_UF[i], converteNomeUF(status_dos_registradores[i]));
         }
     }
+}
+
+
+void converteInstrucao(char **instrucoes, int PC, int *memoria, int tam_mem){
+    for(int i = 0; i < tam_mem; i++){
+        if(i < PC){
+            instrucoes[i] = converter(memoria[i]);
+        }else{
+            break;
+        }
+    }
+}
+
+char* converter(int instrucao){
+    //aqui temos o int da instrucao
+    //hora de converter :)
+
+    int opcode = recuperaCampo(instrucao, 6, 32);
+    int Fi = recuperaCampo(instrucao, 5, 26);
+    int Fj = recuperaCampo(instrucao, 5, 21);
+    int Fk = recuperaCampo(instrucao, 5, 16);
+
+    //separamos a instrucao em inteiros agora bora colocar como string
+
+    char *str_opcode, *str_fi, *str_fj, *str_fk;
+    str_opcode = opcodeParaString(opcode);
+    str_fi = converteNomeRegistrador(Fi);
+    str_fj = converteNomeRegistrador(Fj);
+    str_fk = converteNomeRegistrador(Fk);
+
+    char str_instrucao[50];
+    strcat(str_instrucao, str_opcode);
+    strcat(str_instrucao, " ");
+    strcat(str_instrucao, str_fi);
+    strcat(str_instrucao, " ");
+    strcat(str_instrucao, str_fj);
+    strcat(str_instrucao, " ");
+    strcat(str_instrucao, str_fk);
+
+    return str_instrucao;
+}
+
+int recuperaCampo(int instruct, int size, int starting_bit){
+    int32_t mask_2 = pow(2, size) - 1; // corresponde ao inteiro de 32 bits cujos seis bits mais significativos eh 1
+    int mask = 0;
+    for(int i =0; i < 32; i++){
+        if(i < size){
+            mask = mask << 1 | 1;
+        }
+        if(i >= size && i < starting_bit){
+            mask = mask << 1;
+        }
+    }
+    int operator = mask & instruct;
+    for(int i = starting_bit; i > size; i--)
+        operator = operator >> 1 | 0;
+    operator = operator & mask_2; 
+    return operator;
+}
+
+
+char* opcodeParaString(int opcode){
+    switch(opcode){
+        case(ADD):
+            return "add";
+        case(ADDI):
+            return "addi";
+        case(AND):
+            return "and";
+        case(ANDI):
+            return "andi";
+        case(OR):
+            return "or";
+        case(ORI):
+            return "ori";
+        case(SLT):
+            return "slt";
+        case(SUB):
+            return "sub";
+        case(MULT):
+            return "mult";
+        case(DIV):
+            return "div";
+        case(LI):
+            return "li";
+        case(MOVE):
+            return "move";
+            
 }

@@ -67,8 +67,8 @@ void lerInstrucao(char *instrucao, int *memoria, int tamanho_memoria){
 
     if(flag_opcode_li){ // opcode LI
         bin_registradores[0] = registradorParaBinario(aux_registradores[0]);
-        bin_registradores[1] = 0;
-        bin_registradores[2] = 0;
+        bin_registradores[1] = -1;
+        bin_registradores[2] = -1;
         bin_imediate = atoi(aux_registradores[1]);
         bin_instrucao = (bin_opcode << 26) + (bin_registradores[0] << 21) + (bin_registradores[1] << 16) + bin_imediate;
     }else if(flag_opcode_imediate){ //opcode de instrucao que usa imediato
@@ -80,7 +80,7 @@ void lerInstrucao(char *instrucao, int *memoria, int tamanho_memoria){
     }else if(flag_opcode_move){ // opcode move
         bin_registradores[0] = registradorParaBinario(aux_registradores[0]);
         bin_registradores[1] = registradorParaBinario(aux_registradores[1]);
-        bin_registradores[2] = 0;
+        bin_registradores[2] = -1;
         bin_instrucao = (bin_opcode << 26) + (bin_registradores[0] << 21) + (bin_registradores[1] << 16) + (bin_registradores[2] << 11) + (0 << 0);
     }else{ //opcode comum
         bin_registradores[0] = registradorParaBinario(aux_registradores[0]);

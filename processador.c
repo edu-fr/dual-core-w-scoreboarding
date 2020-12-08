@@ -29,6 +29,11 @@ void scoreboarding(int *memoria, int tamanho_memoria, char* nome_arq_saida, char
     limpaBusca(&instrucao_buscada);
     limpaDecodificacao(&instrucao_decodificada);
 
+    char **instrucoes = malloc(sizeof(char*)*tamanho_memoria);
+    for(int indice=0; indice < 64; indice++){
+        instrucoes[indice] = malloc(sizeof(char)*64);
+    }
+
     initScoreboarding(memoria,tamanho_memoria, instrucoes_prontas, &acabou_de_executar, lista_instrucoes_executando, lista_resultados,instrucoes_escritas);
     int PC = 0;
     FILE* arq_saida;
@@ -61,7 +66,7 @@ void scoreboarding(int *memoria, int tamanho_memoria, char* nome_arq_saida, char
             }
         }
 
-        saida(arq_saida, PC, linhas_instrucoes);
+        saida(arq_saida, PC, instrucoes, memoria, tamanho_memoria);
         limpaEstruturas(instrucoes_escritas, lista_resultados, instrucoes_prontas, lista_instrucoes_executando);
         atualizaDependencias();
         //checa se alguma Unidade Funcional ainda tem processos a fazer
@@ -70,7 +75,11 @@ void scoreboarding(int *memoria, int tamanho_memoria, char* nome_arq_saida, char
         clock += 1;        
     } while(!acabou_de_executar);
 
-    saida(arq_saida, tamanho_memoria, linhas_instrucoes);
+    for(int indice=0;indice<10;indice++) //Percorre o "Vetor"
+        free(instrucoes[indice]); //Libera a String
+    free(instrucoes); //No término do Loop, libera o "Vetor"
+
+    saida(arq_saida, PC, instrucoes, memoria, tamanho_memoria);
     fclose(arq_saida);
 }
 
