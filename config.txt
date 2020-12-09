@@ -9,4 +9,4 @@ sub = 8
 mult = 3
 div = 10
 li = 4
-mov = 1
+move = 1

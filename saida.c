@@ -1,6 +1,6 @@
 #include "saida.h"
 
-extern int clock;
+extern int clock_processador;
 extern statusInst status_instrucoes; 
 extern UnidadeFuncional vetor_UF[5];
 extern enum UF status_dos_registradores[32];
@@ -17,7 +17,7 @@ void escrever_saida(FILE* arq, int PC, char linhas_instrucoes[][64]){
     char nomes_UF[32][16];
     converteStatusRegistradores(nomes_UF);
     
-    fprintf(arq, "--------------------- ciclo %d ----------------------- \n \n", clock); //escreveu primeira linha
+    fprintf(arq, "--------------------- ciclo %d ----------------------- \n \n", clock_processador); //escreveu primeira linha
     fprintf(arq, "1) status das instrucoes \n \n");
     fprintf(arq, "\t\t\t\temissao\t|\tleitura dos operandos\t|\texecucao\t|\tescrita dos resultados\t\n");   
     for(int i = 0; i < PC; i++){

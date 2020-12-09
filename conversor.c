@@ -6,7 +6,7 @@ bool flag_opcode_imediate = false;
 bool flag_opcode_move = false;
 bool flag_opcode_li = false;
 
-void conversor(char *nome_arq, int *memoria, char linhas_instrucoes[][64], int tamanho_memoria){
+void conversor(char *nome_arq, int *memoria, char** linhas_instrucoes, int tamanho_memoria){
     //Abrir o arquivo
     FILE *arquivo_instrucao;
     arquivo_instrucao = fopen(nome_arq, "r");
@@ -19,7 +19,7 @@ void conversor(char *nome_arq, int *memoria, char linhas_instrucoes[][64], int t
 }
 
 
-void lerArquivo(FILE *arquivo_instrucao, int* memoria, char linhas_instrucoes[][64], int tamanho_memoria){
+void lerArquivo(FILE *arquivo_instrucao, int* memoria, char **linhas_instrucoes, int tamanho_memoria){
     // Variavel auxiliar que guarda a string da linha
     char buffer_instrucao[64];
     int numero_instrucao = 0;

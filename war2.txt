@@ -3,4 +3,4 @@ addi $t1 $t1 2
 mult $t0 $t1 $t1
 mult $t0 $t1 $t1
 div $t0 $t1 $t1
-move $t0, $t4
+move $t0 $t4

@@ -10,8 +10,8 @@ Eduardo Felipe Ribeiro
 Para compilar o codigo "main.c":
 	-> gcc main.c -o nome_executavel -lm 
 
-Para executar:
-	-> ./nome_executavel -c arq_configuracao.txt -o arq_saida -p arq_programa.txt -m tamanho do programa
+Para executar: // EDITAR DEPOIS
+	-> ./nome_executavel -c config.txt -o arq_saida_1.txt -q arq_saida_2.txt -p war.txt -r war2.txt -m 5 -n 6
 
 Para abrir um menu de ajuda basta digitar a opcao "-h"
 

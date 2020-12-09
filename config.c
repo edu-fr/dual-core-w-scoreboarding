@@ -51,7 +51,7 @@ void registrarCiclo(char *opcode, int ciclos){
         num_ciclos_DIV = ciclos;
     else if(strcmp("li ", opcode) == 0)
         num_ciclos_LI = ciclos;
-    else if(strcmp("mov ", opcode) == 0)
+    else if(strcmp("move ", opcode) == 0)
         num_ciclos_MOVE = ciclos;
     else {
         printf("Opcode inválido: %s \n", opcode);

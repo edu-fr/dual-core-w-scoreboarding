@@ -41,7 +41,7 @@ bool verificaTermino(int PC, int tamanho_memoria, instrucaoDecodificada instruca
 
 int opcodeParaNumCiclos(int opcode);
 
-void scoreboarding(int *memoria, int tamanho_memoria, char* saida, char linhas_instrucoes[][64]);
+void* scoreboarding(void* t_info);
 
 bool verificaMove(int opcode);
 
