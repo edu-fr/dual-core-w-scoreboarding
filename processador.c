@@ -3,20 +3,19 @@
 #include "processador.h"
 #include <math.h>
 
-int clock_processador;
-statusInst status_instrucoes;         // Status das Instrucoes
-int banco_registradores[32];          // Banco de registradores
-UnidadeFuncional vetor_UF[5];         // Unidades Funcionais
-enum UF status_dos_registradores[32]; // Status dos Registradores
+void* scoreboarding(void *arg){
+    // VARIAVEIS EX-GLOBAIS
+    int clock_processador;
+    statusInst status_instrucoes;           // Status das instrucoes
+    int banco_registradores[32];            // Banco dos registradores
+    UnidadeFuncional vetor_UF[5];           // Unidades Funcionais
+    enum UF status_dos_registradores[32];   // Status dos Registradores
+    bool flag_registradores[32];
+    // Estrutura Auxiliar da Emissao
+    emissoes lista_emissoes;
+    int clock_instrucoes_lidas[5];
 
-bool flag_registradores[32];
 
-// Estrutura Auxiliar da Emissao
-emissoes lista_emissoes;
-int clock_instrucoes_lidas[5];
-
-void *scoreboarding(void *arg)
-{
     tInfo *t_info = arg;
     /* Dados t_info */
     int *memoria = t_info->memoria;
@@ -51,7 +50,10 @@ void *scoreboarding(void *arg)
     limpaBusca(&instrucao_buscada);
     limpaDecodificacao(&instrucao_decodificada);
 
-    initScoreboarding(memoria, tamanho_memoria, instrucoes_prontas, &acabou_de_executar, lista_instrucoes_executando, lista_resultados, instrucoes_escritas);
+    initScoreboarding(memoria, tamanho_memoria, instrucoes_prontas, &acabou_de_executar, 
+    lista_instrucoes_executando, lista_resultados, instrucoes_escritas, clock_processador,
+    vetor_UF, status_dos_registradores, flag_registradores,
+     &lista_emissoes, clock_instrucoes_lidas, banco_registradores);
     int PC = 0;
     FILE *arq_saida;
     arq_saida = fopen(nome_arq_saida, "w");
@@ -59,9 +61,13 @@ void *scoreboarding(void *arg)
     do
     {
         printf("\n======== CLOCK %d ========\n", clock_processador);
-        escritaResultados(lista_resultados, instrucoes_escritas);
-        execucao(instrucoes_prontas, lista_instrucoes_executando, lista_resultados);
-        leituraOperandos(instrucoes_prontas, PC - 1, memoria);
+        escritaResultados(lista_resultados, instrucoes_escritas, 
+        clock_processador, &status_instrucoes, banco_registradores, 
+        vetor_UF, flag_registradores, lista_emissoes, clock_instrucoes_lidas);
+        execucao(instrucoes_prontas, lista_instrucoes_executando, 
+        lista_resultados, clock_processador, &status_instrucoes, banco_registradores);
+        leituraOperandos(instrucoes_prontas, PC - 1, memoria,
+        clock_processador, &status_instrucoes, vetor_UF, &lista_emissoes, clock_instrucoes_lidas);
 
         if (PC < tamanho_memoria)
         {
@@ -76,27 +82,31 @@ void *scoreboarding(void *arg)
 
         if (instrucao_decodificada.instrucao_completa != 0)
         { // só emite se necessario
-            if (emissao(instrucao_decodificada))
+            if (emissao(instrucao_decodificada, clock_processador, 
+            &status_instrucoes, vetor_UF, status_dos_registradores, &lista_emissoes))
             {
                 limpaBusca(&instrucao_buscada);
                 limpaDecodificacao(&instrucao_decodificada);
                 PC += 1;
             }
-            else
-            {
-            }
         }
 
-        saida(arq_saida, PC, linhas_instrucoes);
-        limpaEstruturas(instrucoes_escritas, lista_resultados, instrucoes_prontas, lista_instrucoes_executando);
-        atualizaDependencias();
+        saida(arq_saida, PC, linhas_instrucoes, clock_processador,
+        status_instrucoes, vetor_UF, status_dos_registradores, 
+        banco_registradores, flag_registradores);
+        limpaEstruturas(instrucoes_escritas, lista_resultados, 
+        instrucoes_prontas, lista_instrucoes_executando, vetor_UF,
+        status_dos_registradores, clock_instrucoes_lidas);
+        atualizaDependencias(vetor_UF);
         //checa se alguma Unidade Funcional ainda tem processos a fazer
         acabou_de_executar = verificaTermino(PC, tamanho_memoria, instrucao_decodificada);
 
         clock_processador += 1;
     } while (!acabou_de_executar);
 
-    saida(arq_saida, tamanho_memoria, linhas_instrucoes);
+    saida(arq_saida, PC, linhas_instrucoes, clock_processador,
+        status_instrucoes, vetor_UF, status_dos_registradores, 
+        banco_registradores, flag_registradores);
     fclose(arq_saida);
     return 0;
 }
@@ -129,7 +139,7 @@ void decodificacao(instrucaoBuscada instrucao_buscada, instrucaoDecodificada *in
     instrucao_decodificada->PC_busca = instrucao_buscada.PC_busca;
 }
 
-bool verificaWAW(int destino_nova)
+bool verificaWAW(int destino_nova, UnidadeFuncional vetor_UF[5])
 {
     for (int i = 0; i < 5; i++)
     {
@@ -141,7 +151,9 @@ bool verificaWAW(int destino_nova)
     return false;
 }
 
-bool emissao(instrucaoDecodificada instrucao_decodificada)
+bool emissao(instrucaoDecodificada instrucao_decodificada, 
+int clock_processador, statusInst *status_instrucoes, UnidadeFuncional vetor_UF[5],
+enum UF status_dos_registradores[32], emissoes *lista_emissoes)
 {
     int destino_nova = recuperaCampo(instrucao_decodificada.instrucao_completa, 5, 26);
 
@@ -164,35 +176,39 @@ bool emissao(instrucaoDecodificada instrucao_decodificada)
     {
         return false;
     }
-    if (verificaWAW(destino_nova))
+    if (verificaWAW(destino_nova, vetor_UF))
     {
         return false;
     }
     else
     {
-        preencheStatusUF(instrucao_decodificada.indice_UF, instrucao_decodificada.instrucao_completa, instrucao_decodificada.opcode); //
-        lista_emissoes.opcodes_emitidos[instrucao_decodificada.indice_UF] = instrucao_decodificada.opcode;
-        lista_emissoes.instrucoes_emitidas[instrucao_decodificada.indice_UF] = instrucao_decodificada.instrucao_completa; //
-        lista_emissoes.PC_emitido[instrucao_decodificada.indice_UF] = instrucao_decodificada.PC_busca;
-        preencheStatusInstrucoes(EMISSAO, instrucao_decodificada.PC_busca);
+        preencheStatusUF(instrucao_decodificada.indice_UF, 
+        instrucao_decodificada.instrucao_completa,
+         instrucao_decodificada.opcode, vetor_UF, *lista_emissoes); //
+        lista_emissoes->opcodes_emitidos[instrucao_decodificada.indice_UF] = instrucao_decodificada.opcode;
+        lista_emissoes->instrucoes_emitidas[instrucao_decodificada.indice_UF] = instrucao_decodificada.instrucao_completa; //
+        lista_emissoes->PC_emitido[instrucao_decodificada.indice_UF] = instrucao_decodificada.PC_busca;
+        preencheStatusInstrucoes(EMISSAO, instrucao_decodificada.PC_busca, clock_processador, status_instrucoes);
         status_dos_registradores[vetor_UF[instrucao_decodificada.indice_UF].Fi] = instrucao_decodificada.indice_UF;
         return true;
     }
 }
 
-void leituraOperandos(listaExecucao instrucoes_prontas[5], int PC, int *memoria)
+void leituraOperandos(listaExecucao instrucoes_prontas[5], int PC, int *memoria, 
+int clock_processador, statusInst *status_instrucoes, UnidadeFuncional vetor_UF[5],
+emissoes *lista_emissoes, int clock_instrucoes_lidas[5])
 {
     for (int i = 0; i < 5; i++)
     {
         //percorre as UF's e ve qual pode ser lida
         if (strcmp(vetor_UF[i].busy, "sim") == 0)
         { // só le operandos se tiver instrucao omitida na UF
-            if (liberaLeitura(i) && lista_emissoes.opcodes_emitidos[i] != -1)
+            if (liberaLeitura(i, vetor_UF) && lista_emissoes->opcodes_emitidos[i] != -1)
             {
                 //ambas sao true entao pode ler
-                instrucoes_prontas[i].opcode = lista_emissoes.opcodes_emitidos[i];
-                instrucoes_prontas[i].PC = lista_emissoes.PC_emitido[i];
-                lista_emissoes.opcodes_emitidos[i] = -1; // Garante que essa instrucao nao sera lida novamente
+                instrucoes_prontas[i].opcode = lista_emissoes->opcodes_emitidos[i];
+                instrucoes_prontas[i].PC = lista_emissoes->PC_emitido[i];
+                lista_emissoes->opcodes_emitidos[i] = -1; // Garante que essa instrucao nao sera lida novamente
                 instrucoes_prontas[i].destino = vetor_UF[i].Fi;
                 instrucoes_prontas[i].instrucao = memoria[PC];
                 instrucoes_prontas[i].operando1 = vetor_UF[i].Fj;
@@ -201,23 +217,33 @@ void leituraOperandos(listaExecucao instrucoes_prontas[5], int PC, int *memoria)
                 instrucoes_prontas[i].clock_lido = clock_processador;
                 clock_instrucoes_lidas[i] = clock_processador;
                 printf("\nInstrucao n %d foi lida no clock %d! \n", PC, instrucoes_prontas[i].clock_lido);
-                preencheStatusInstrucoes(LEITURA_OPERANDOS, lista_emissoes.PC_emitido[i]);
+                preencheStatusInstrucoes(LEITURA_OPERANDOS, lista_emissoes->PC_emitido[i],
+                 clock_processador, status_instrucoes);
             }
         }
     }
 }
 
-void execucao(listaExecucao instrucoes_prontas[5], instrucaoExecutando lista_instrucoes_executando[5], resultadoExec lista_resultados[5])
+void execucao(listaExecucao instrucoes_prontas[5], 
+instrucaoExecutando lista_instrucoes_executando[5], resultadoExec lista_resultados[5], 
+int clock_processador, statusInst *status_instrucoes, int banco_registradores[32])
 {
     /* Testar D+ */
-    executaUF(&instrucoes_prontas[Mult1], &lista_instrucoes_executando[Mult1], &lista_resultados[Mult1]);
-    executaUF(&instrucoes_prontas[Mult2], &lista_instrucoes_executando[Mult2], &lista_resultados[Mult2]);
-    executaUF(&instrucoes_prontas[Add], &lista_instrucoes_executando[Add], &lista_resultados[Add]);
-    executaUF(&instrucoes_prontas[Div], &lista_instrucoes_executando[Div], &lista_resultados[Div]);
-    executaUF(&instrucoes_prontas[Log], &lista_instrucoes_executando[Log], &lista_resultados[Log]);
+    executaUF(&instrucoes_prontas[Mult1], &lista_instrucoes_executando[Mult1],
+     &lista_resultados[Mult1], clock_processador, status_instrucoes, banco_registradores);
+    executaUF(&instrucoes_prontas[Mult2], &lista_instrucoes_executando[Mult2], 
+    &lista_resultados[Mult2], clock_processador, status_instrucoes, banco_registradores);
+    executaUF(&instrucoes_prontas[Add], &lista_instrucoes_executando[Add], 
+    &lista_resultados[Add], clock_processador, status_instrucoes, banco_registradores);
+    executaUF(&instrucoes_prontas[Div], &lista_instrucoes_executando[Div],
+     &lista_resultados[Div],clock_processador,  status_instrucoes, banco_registradores);
+    executaUF(&instrucoes_prontas[Log], &lista_instrucoes_executando[Log],
+     &lista_resultados[Log], clock_processador, status_instrucoes, banco_registradores);
 }
 
-void executaUF(listaExecucao *instrucao_pronta, instrucaoExecutando *instrucao_executando, resultadoExec *resultado)
+void executaUF(listaExecucao *instrucao_pronta, instrucaoExecutando *instrucao_executando, 
+resultadoExec *resultado, int clock_processador, statusInst *status_instrucoes, 
+int banco_registradores[32])
 {
 
     if (instrucao_pronta->PC != -1 && instrucao_pronta->ja_executou == false)
@@ -229,11 +255,12 @@ void executaUF(listaExecucao *instrucao_pronta, instrucaoExecutando *instrucao_e
 
     if (instrucao_executando->ciclos_restantes == 0)
     {
-        resultado->resultado = executaInstrucao(*instrucao_pronta);
+        resultado->resultado = executaInstrucao(*instrucao_pronta, banco_registradores);
         resultado->ciclo_termino = clock_processador;
         resultado->reg_destino = instrucao_pronta->destino;
         resultado->PC = instrucao_pronta->PC;
-        preencheStatusInstrucoes(EXECUCAO, instrucao_pronta->PC);
+        preencheStatusInstrucoes(EXECUCAO, instrucao_pronta->PC, 
+        clock_processador, status_instrucoes);
 
         instrucao_executando->ciclos_restantes -= 1;
     }
@@ -243,7 +270,7 @@ void executaUF(listaExecucao *instrucao_pronta, instrucaoExecutando *instrucao_e
     }
 }
 
-bool liberaLeitura(int i)
+bool liberaLeitura(int i, UnidadeFuncional vetor_UF[5])
 {
     if ((strcmp(vetor_UF[i].Rj, "nao")) && (strcmp(vetor_UF[i].Rk, "nao")))
     {
@@ -252,7 +279,9 @@ bool liberaLeitura(int i)
     return false;
 }
 
-bool verificaWAR(int reg_destino, int indice_UF_atual)
+bool verificaWAR(int reg_destino, int indice_UF_atual,
+ int clock_processador, UnidadeFuncional vetor_UF[5], 
+ emissoes lista_emissoes, int clock_instrucoes_lidas[5])
 {
     for (int i = 0; i < 5; i++)
     { // verifica se algum dos outros 4 registradores vai utilizar na leitura o reg destino atual
@@ -285,35 +314,17 @@ bool verificaWAR(int reg_destino, int indice_UF_atual)
                 }
                 printf("Porque o strcmp deu errado!\n");
                 return true;
-
-                /*
-                if(clock_instrucoes_lidas[i] == -1) {
-                    printf("Motivo: clock_lido == -1\n");
-                    return true;
-                } else {
-                
-                    if(clock_instrucoes_lidas[i] >= clock){
-                        printf("Motivo: clock lido < clock atual, pois %d (clock lido) é menor que %d (clock atual)\n", clock_instrucoes_lidas[i], clock);
-                        return true;
-                    } else {
-                        clock_instrucoes_lidas[i] = -1;
-                        return false;
-                    }
-                */
-
-                /*
-                if(!strcmp(vetor_UF[i].Rj, "sim") && !strcmp(vetor_UF[i].Rk, "sim")){ //
-                    return false;
-                }
-                return true;
-                */
             }
         }
     }
     return false;
 }
 
-void escritaResultados(resultadoExec lista_resultados[5], int instrucoes_escritas[5])
+void escritaResultados(resultadoExec lista_resultados[5],
+ int instrucoes_escritas[5], int clock_processador, 
+ statusInst *status_instrucoes, int banco_registradores[32],
+ UnidadeFuncional vetor_UF[5],  bool flag_registradores[32],
+  emissoes lista_emissoes, int clock_instrucoes_lidas[5])
 {
     for (int i = 0; i < 5; i++)
     {
@@ -321,43 +332,49 @@ void escritaResultados(resultadoExec lista_resultados[5], int instrucoes_escrita
         {
             continue;
         }
-        if (verificaWAR(vetor_UF[i].Fi, i))
+        if (verificaWAR(vetor_UF[i].Fi, i, clock_processador, 
+        vetor_UF, lista_emissoes, clock_instrucoes_lidas))
         {
-            printf("Tem WAR na instrucao que está na UF %s, no clock %d\n", converteNomeUF(i), clock_processador);
+            printf("Tem WAR na instrucao que está na UF %s, no clock %d\n", 
+            converteNomeUF(i), clock_processador);
             continue;
         }
         instrucoes_escritas[i] = 1;
         banco_registradores[lista_resultados[i].reg_destino] = lista_resultados[i].resultado;
         flag_registradores[lista_resultados[i].reg_destino] = true;
-        preencheStatusInstrucoes(ESCRITA, lista_resultados[i].PC);
+        preencheStatusInstrucoes(ESCRITA, lista_resultados[i].PC, 
+        clock_processador, status_instrucoes);
     }
 }
 
-void limpaEstruturas(int instrucoes_escritas[5], resultadoExec lista_resultados[5], listaExecucao instrucoes_prontas[5],
-                     instrucaoExecutando lista_instrucoes_executando[5])
+void limpaEstruturas(int instrucoes_escritas[5], resultadoExec lista_resultados[5], 
+listaExecucao instrucoes_prontas[5], instrucaoExecutando lista_instrucoes_executando[5],
+UnidadeFuncional vetor_UF[5], enum UF status_dos_registradores[32], int clock_instrucoes_lidas[5])
 {
     for (int i = 0; i < 5; i++)
     {
         if (instrucoes_escritas[i] == 1)
         {
-            limpaUF(i);
+            limpaUF(i, vetor_UF);
             status_dos_registradores[lista_resultados[i].reg_destino] = -1;
-            limpaAuxiliares(i, lista_resultados, instrucoes_prontas, lista_instrucoes_executando);
+            limpaAuxiliares(i, lista_resultados, instrucoes_prontas, 
+            lista_instrucoes_executando, clock_instrucoes_lidas);
             instrucoes_escritas[i] = -1;
         }
     }
 }
 
-void atualizaDependencias()
+void atualizaDependencias(UnidadeFuncional vetor_UF[5])
 {
     for (int i = 0; i < 5; i++)
     {
-        preencheStatusRegistradorRj(i, vetor_UF[i].Fj);
-        preencheStatusRegistradorRk(i, vetor_UF[i].Fk);
+        preencheStatusRegistradorRj(i, vetor_UF[i].Fj, vetor_UF);
+        preencheStatusRegistradorRk(i, vetor_UF[i].Fk, vetor_UF);
     }
 }
 
-int verificaRegistradorOcupado(int8_t registrador, int indice_UF)
+int verificaRegistradorOcupado(int8_t registrador, int indice_UF, 
+UnidadeFuncional vetor_UF[5], emissoes lista_emissoes)
 {
     for (int i = 0; i < 5; i++)
     {
@@ -375,9 +392,10 @@ int verificaRegistradorOcupado(int8_t registrador, int indice_UF)
     }
     return -1;
 }
-void preencheStatusRegistradorRk(int indice, int8_t registrador)
+void preencheStatusRegistradorRk(int indice, int8_t registrador, UnidadeFuncional vetor_UF[5])
 {
-    int registrador_ocupado = verificaRegistradorOcupado(registrador, indice);
+    int registrador_ocupado = verificaRegistradorOcupado(registrador, indice, 
+    vetor_UF, lista_emissoes);
     if (strcmp(vetor_UF[indice].busy, "nao"))
     {
         if (registrador_ocupado != -1)
@@ -399,9 +417,10 @@ void preencheStatusRegistradorRk(int indice, int8_t registrador)
     }
 }
 
-void preencheStatusRegistradorRj(int indice, int8_t registrador)
+void preencheStatusRegistradorRj(int indice, int8_t registrador, UnidadeFuncional vetor_UF[5])
 {
-    int registrador_ocupado = verificaRegistradorOcupado(registrador, indice);
+    int registrador_ocupado = verificaRegistradorOcupado(registrador, indice, 
+    vetor_UF, lista_emissoes);
     if (strcmp(vetor_UF[indice].busy, "nao"))
     {
         if (registrador_ocupado != -1)
@@ -423,8 +442,10 @@ void preencheStatusRegistradorRj(int indice, int8_t registrador)
     }
 }
 
-void limpaAuxiliares(int indice, resultadoExec lista_resultados[5], listaExecucao instrucoes_prontas[5],
-                     instrucaoExecutando lista_instrucoes_executando[5])
+void limpaAuxiliares(int indice, resultadoExec lista_resultados[5], 
+listaExecucao instrucoes_prontas[5],
+instrucaoExecutando lista_instrucoes_executando[5],
+int clock_instrucoes_lidas[5])
 {
 
     lista_resultados[indice].ciclo_termino = -1;
@@ -448,7 +469,7 @@ void limpaAuxiliares(int indice, resultadoExec lista_resultados[5], listaExecuca
     lista_instrucoes_executando[indice].clock_inicio = -1;
 }
 
-void limpaUF(int indice_UF)
+void limpaUF(int indice_UF, UnidadeFuncional vetor_UF[5])
 {
     vetor_UF[indice_UF].FU = -1;
     vetor_UF[indice_UF].Fi = -1;
@@ -462,7 +483,7 @@ void limpaUF(int indice_UF)
     strcpy(vetor_UF[indice_UF].op, "");
 }
 
-int executaInstrucao(listaExecucao instrucao)
+int executaInstrucao(listaExecucao instrucao, int banco_registradores[32])
 {
     int resultado;
     switch (instrucao.opcode)
@@ -515,21 +536,22 @@ int executaInstrucao(listaExecucao instrucao)
     return resultado;
 }
 
-void preencheStatusInstrucoes(int etapa, int PC)
+void preencheStatusInstrucoes(int etapa, int PC, 
+int clock_processador, statusInst *status_instrucoes)
 {
     switch (etapa)
     {
     case EMISSAO:
-        status_instrucoes.emissao[PC] = clock_processador;
+        status_instrucoes->emissao[PC] = clock_processador;
         break;
     case LEITURA_OPERANDOS:
-        status_instrucoes.leituraOP[PC] = clock_processador;
+        status_instrucoes->leituraOP[PC] = clock_processador;
         break;
     case EXECUCAO:
-        status_instrucoes.execucao[PC] = clock_processador;
+        status_instrucoes->execucao[PC] = clock_processador;
         break;
     case ESCRITA:
-        status_instrucoes.escrita[PC] = clock_processador;
+        status_instrucoes->escrita[PC] = clock_processador;
         break;
     }
 }
@@ -563,15 +585,10 @@ int opcodeParaUF(int opcode)
         return Add;
     else if (opcode == DIV)
         return Div;
-    else if (opcode == AND || opcode == ANDI || opcode == OR || opcode == ORI || opcode == SLT || opcode == LI || opcode == MOVE)
+    else if (opcode == AND || opcode == ANDI || opcode == OR || 
+    opcode == ORI || opcode == SLT || opcode == LI || opcode == MOVE)
         return Log;
-    else if (opcode == MULT)
-    {
-        /*
-        if(strcmp(vetor_UF[Mult1].busy, "sim") == 0){
-            return Mult2;
-        }
-        */
+    else if (opcode == MULT){
         return Mult1;
     }
     return -1;
@@ -635,14 +652,15 @@ bool verificaLi(int opcode)
     return false;
 }
 
-void preencheStatusUF(int indice_UF, int instrucao, int opcode)
+void preencheStatusUF(int indice_UF, int instrucao, int opcode, 
+UnidadeFuncional vetor_UF[5], emissoes lista_emissoes)
 {
     /* Preenche a linha do status das unidades funcionais */
     strcpy(vetor_UF[indice_UF].busy, "sim");
     strcpy(vetor_UF[indice_UF].op, opcodeParaOperacao(opcode));
     vetor_UF[indice_UF].Fi = recuperaCampo(instrucao, 5, 26);
     vetor_UF[indice_UF].Fj = recuperaCampo(instrucao, 5, 21);
-    preencheStatusRegistradorRj(indice_UF, vetor_UF[indice_UF].Fj);
+    preencheStatusRegistradorRj(indice_UF, vetor_UF[indice_UF].Fj, vetor_UF);
 
     if (verificaLi(opcode))
     { // se for Li
@@ -659,21 +677,22 @@ void preencheStatusUF(int indice_UF, int instrucao, int opcode)
     else if (!verificaImediato(opcode))
     { //se for normal
         vetor_UF[indice_UF].Fk = recuperaCampo(instrucao, 5, 16);
-        preencheStatusRegistradorRk(indice_UF, vetor_UF[indice_UF].Fk);
+        preencheStatusRegistradorRk(indice_UF, vetor_UF[indice_UF].Fk, vetor_UF);
     }
     else
     { // se for imediato
         vetor_UF[indice_UF].Fk = -1;
         strcpy(vetor_UF[indice_UF].Rk, "");
     }
-    preencheOcupacaoStatusUF(indice_UF);
+    preencheOcupacaoStatusUF(indice_UF, vetor_UF, lista_emissoes);
 }
 
-void preencheOcupacaoStatusUF(int indice_UF)
+void preencheOcupacaoStatusUF(int indice_UF, UnidadeFuncional vetor_UF[5], emissoes lista_emissoes)
 {
     int indice_ocupado;
     // Verifica se Fj está ocupado
-    indice_ocupado = verificaRegistradorOcupado(vetor_UF[indice_UF].Fj, indice_UF);
+    indice_ocupado = verificaRegistradorOcupado(vetor_UF[indice_UF].Fj, 
+    indice_UF, vetor_UF, lista_emissoes);
     if (indice_ocupado > -1)
     { // Está ocupado
         vetor_UF[indice_UF].Qj = indice_ocupado;
@@ -684,7 +703,8 @@ void preencheOcupacaoStatusUF(int indice_UF)
         strcpy(vetor_UF[indice_UF].Rj, "sim");
     }
     // Verifica se Fk está ocupado
-    indice_ocupado = verificaRegistradorOcupado(vetor_UF[indice_UF].Fk, indice_UF);
+    indice_ocupado = verificaRegistradorOcupado(vetor_UF[indice_UF].Fk,
+     indice_UF, vetor_UF, lista_emissoes);
     if (indice_ocupado > -1)
     { // Está ocupado
         vetor_UF[indice_UF].Qk = indice_ocupado;
@@ -736,7 +756,11 @@ int opcodeParaNumCiclos(int opcode)
         return num_ciclos_MOVE;
 }
 
-void initScoreboarding(int *memoria, int tamanho_memoria, listaExecucao instrucoes_prontas[5], bool *acabou_de_executar, instrucaoExecutando lista_instrucoes_executando[5], resultadoExec lista_resultados[5], int instrucoes_escritas[5])
+void initScoreboarding(int *memoria, int tamanho_memoria, listaExecucao instrucoes_prontas[5], 
+bool *acabou_de_executar, instrucaoExecutando lista_instrucoes_executando[5], 
+resultadoExec lista_resultados[5], int instrucoes_escritas[5], int clock_processador,
+UnidadeFuncional vetor_UF[5], enum UF status_dos_registradores[32],bool flag_registradores[32],
+emissoes *lista_emissoes, int clock_instrucoes_lidas[5], int banco_registradores[32])
 {
     status_instrucoes.instrucoes = memoria; // recebe todas as instrucoes
     status_instrucoes.emissao = (int *)calloc(sizeof(int), tamanho_memoria);
@@ -749,7 +773,7 @@ void initScoreboarding(int *memoria, int tamanho_memoria, listaExecucao instruco
 
     for (int i = 0; i < 5; i++)
     {
-        limpaUF(i);
+        limpaUF(i, vetor_UF);
 
         instrucoes_prontas[i].PC = -1;
         instrucoes_prontas[i].clock_lido = -1;
@@ -769,9 +793,9 @@ void initScoreboarding(int *memoria, int tamanho_memoria, listaExecucao instruco
         lista_resultados[i].reg_destino = -1;
         lista_resultados[i].resultado = -1;
 
-        lista_emissoes.instrucoes_emitidas[i] = -1;
-        lista_emissoes.opcodes_emitidos[i] = -1;
-        lista_emissoes.PC_emitido[i] = -1;
+        lista_emissoes->instrucoes_emitidas[i] = -1;
+        lista_emissoes->opcodes_emitidos[i] = -1;
+        lista_emissoes->PC_emitido[i] = -1;
 
         instrucoes_escritas[i] = -1;
         clock_instrucoes_lidas[i] = -1;

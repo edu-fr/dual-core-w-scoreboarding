@@ -1,21 +1,21 @@
 #include "saida.h"
 
-extern int clock_processador;
-extern statusInst status_instrucoes; 
-extern UnidadeFuncional vetor_UF[5];
-extern enum UF status_dos_registradores[32];
-extern int banco_registradores[32];
-extern bool flag_registradores[32];
 
-
-void saida(FILE* arq_saida, int PC, char linhas_instrucoes[][64]){
+void saida(FILE* arq_saida, int PC, char linhas_instrucoes[][64], int clock_processador,
+statusInst status_instrucoes, UnidadeFuncional vetor_UF[5], enum UF status_dos_registradores[32], 
+int banco_registradores[32], bool flag_registradores[32]){
     fseek(arq_saida, 0, SEEK_END); //aponta pro final do arquivo
-    escrever_saida(arq_saida, PC, linhas_instrucoes);
+    escrever_saida(arq_saida, PC, linhas_instrucoes, clock_processador, 
+    status_instrucoes, vetor_UF, status_dos_registradores, banco_registradores,
+    flag_registradores);
 }
 
-void escrever_saida(FILE* arq, int PC, char linhas_instrucoes[][64]){
+void escrever_saida(FILE* arq, int PC, char linhas_instrucoes[][64], int clock_processador,
+statusInst status_instrucoes, UnidadeFuncional vetor_UF[5], enum UF status_dos_registradores[32], 
+int banco_registradores[32], bool flag_registradores[32]){
+
     char nomes_UF[32][16];
-    converteStatusRegistradores(nomes_UF);
+    converteStatusRegistradores(nomes_UF, status_dos_registradores);
     
     fprintf(arq, "--------------------- ciclo %d ----------------------- \n \n", clock_processador); //escreveu primeira linha
     fprintf(arq, "1) status das instrucoes \n \n");
@@ -80,12 +80,6 @@ void escrever_saida(FILE* arq, int PC, char linhas_instrucoes[][64]){
     }
     fprintf(arq, "\n\n");
     
-    // fprintf(arq, "%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t\n\n",
-    // banco_registradores[8], banco_registradores[9],  banco_registradores[10], banco_registradores[11],
-    // banco_registradores[12], banco_registradores[13],  banco_registradores[14], banco_registradores[15],
-    // banco_registradores[16], banco_registradores[17],  banco_registradores[18], banco_registradores[19], 
-    // banco_registradores[20], banco_registradores[21], banco_registradores[22], banco_registradores[23],
-    // banco_registradores[24], banco_registradores[25]);
 }
 
 char* converteNomeUF(int codigo_UF){
@@ -176,7 +170,7 @@ char* converteNomeRegistrador(int cod_reg){
     }
 }
 
-void converteStatusRegistradores(char nomes_UF[32][16]){
+void converteStatusRegistradores(char nomes_UF[32][16], enum UF status_dos_registradores[32]){
     for(int i = 0; i < 32; i++){
         if(status_dos_registradores[i] == -1){
             strcpy(nomes_UF[i], "");
