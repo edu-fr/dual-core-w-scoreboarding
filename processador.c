@@ -25,11 +25,12 @@ void scoreboarding(int *memoria, int tamanho_memoria, char* nome_arq_saida, char
     bool acabou_de_executar;
     instrucaoBuscada instrucao_buscada; 
     instrucaoDecodificada instrucao_decodificada;
+    int indice_UF_emitida = 0;
     // init estruturas auxiliares
     limpaBusca(&instrucao_buscada);
     limpaDecodificacao(&instrucao_decodificada);
 
-    char **instrucoes = malloc(sizeof(char*)*tamanho_memoria);
+    char **instrucoes = (char**) malloc(sizeof(char*)*tamanho_memoria);
     for(int indice=0; indice < 64; indice++){
         instrucoes[indice] = malloc(sizeof(char)*64);
     }
@@ -57,16 +58,14 @@ void scoreboarding(int *memoria, int tamanho_memoria, char* nome_arq_saida, char
         }
 
         if(instrucao_decodificada.instrucao_completa != 0){ // só emite se necessario
-            if(emissao(instrucao_decodificada)){
+            if(emissao(instrucao_decodificada, &indice_UF_emitida)){
                     limpaBusca(&instrucao_buscada);
                     limpaDecodificacao(&instrucao_decodificada);
                     PC+=1;
-                }
-                else {
             }
         }
 
-        saida(arq_saida, PC, instrucoes, memoria, tamanho_memoria);
+        saida(arq_saida, PC, instrucoes, lista_emissoes.instrucoes_emitidas[indice_UF_emitida]);
         limpaEstruturas(instrucoes_escritas, lista_resultados, instrucoes_prontas, lista_instrucoes_executando);
         atualizaDependencias();
         //checa se alguma Unidade Funcional ainda tem processos a fazer
@@ -75,11 +74,12 @@ void scoreboarding(int *memoria, int tamanho_memoria, char* nome_arq_saida, char
         clock += 1;        
     } while(!acabou_de_executar);
 
-    for(int indice=0;indice<10;indice++) //Percorre o "Vetor"
-        free(instrucoes[indice]); //Libera a String
+    for(int indice=0;indice<10;indice++){
+        free(instrucoes[indice]);
+    } //Percorre o "Vetor"
     free(instrucoes); //No término do Loop, libera o "Vetor"
 
-    saida(arq_saida, PC, instrucoes, memoria, tamanho_memoria);
+   // saida(arq_saida, PC, instrucoes, memoria, tamanho_memoria);
     fclose(arq_saida);
 }
 
@@ -116,7 +116,7 @@ bool verificaWAW(int destino_nova){
     return false;
 }
 
-bool emissao(instrucaoDecodificada instrucao_decodificada){
+bool emissao(instrucaoDecodificada instrucao_decodificada, int* indice_UF_emitida){
     int destino_nova = recuperaCampo(instrucao_decodificada.instrucao_completa, 5, 26);
     
     if(instrucao_decodificada.indice_UF == 0){          // É uma instrucao mult
@@ -135,6 +135,7 @@ bool emissao(instrucaoDecodificada instrucao_decodificada){
     if (verificaWAW(destino_nova)){
         return false;
     } else {
+        *indice_UF_emitida = instrucao_decodificada.indice_UF;
         preencheStatusUF(instrucao_decodificada.indice_UF, instrucao_decodificada.instrucao_completa, instrucao_decodificada.opcode);//
         lista_emissoes.opcodes_emitidos[instrucao_decodificada.indice_UF] = instrucao_decodificada.opcode;
         lista_emissoes.instrucoes_emitidas[instrucao_decodificada.indice_UF] = instrucao_decodificada.instrucao_completa;//

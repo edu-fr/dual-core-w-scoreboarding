@@ -9,13 +9,13 @@ extern bool flag_registradores[32];
 
 
 
-void saida(FILE* arq_saida, int PC, char** instrucoes, int* memoria, int tam_mem){
-    converteInstrucao(instrucoes, PC, memoria, tam_mem);
+void saida(FILE* arq_saida, int PC, char** lista_instrucoes, int instrucao){
+    converteInstrucao(lista_instrucoes, PC, instrucao);
     fseek(arq_saida, 0, SEEK_END); //aponta pro final do arquivo
-    escrever_saida(arq_saida, PC, instrucoes);
+    escrever_saida(arq_saida, PC, lista_instrucoes);
 }
 
-void escrever_saida(FILE* arq, int PC, char* instrucoes){
+void escrever_saida(FILE* arq, int PC, char** instrucoes){
     char nomes_UF[32][16];
     converteStatusRegistradores(nomes_UF);
     
@@ -23,7 +23,7 @@ void escrever_saida(FILE* arq, int PC, char* instrucoes){
     fprintf(arq, "1) status das instrucoes \n \n");
     fprintf(arq, "\t\t\t\temissao\t|\tleitura dos operandos\t|\texecucao\t|\tescrita dos resultados\t\n");   
     for(int i = 0; i < PC; i++){
-        fprintf(arq, "%s\t\t\t", linhas_instrucoes[i]);
+        fprintf(arq, "%s\t\t\t", instrucoes[i]);
         if(status_instrucoes.emissao[i] != 0){
             fprintf(arq, "%d\t\t\t", status_instrucoes.emissao[i]);
         }
@@ -181,17 +181,11 @@ void converteStatusRegistradores(char nomes_UF[32][16]){
 }
 
 
-void converteInstrucao(char **instrucoes, int PC, int *memoria, int tam_mem){
-    for(int i = 0; i < tam_mem; i++){
-        if(i < PC){
-            instrucoes[i] = converter(memoria[i]);
-        }else{
-            break;
-        }
-    }
+void converteInstrucao(char **instrucoes, int PC, int instrucao){
+    converter(instrucao, instrucoes[PC]);
 }
 
-char* converter(int instrucao){
+void converter(int instrucao, char *string){
     //aqui temos o int da instrucao
     //hora de converter :)
 
@@ -217,25 +211,7 @@ char* converter(int instrucao){
     strcat(str_instrucao, " ");
     strcat(str_instrucao, str_fk);
 
-    return str_instrucao;
-}
-
-int recuperaCampo(int instruct, int size, int starting_bit){
-    int32_t mask_2 = pow(2, size) - 1; // corresponde ao inteiro de 32 bits cujos seis bits mais significativos eh 1
-    int mask = 0;
-    for(int i =0; i < 32; i++){
-        if(i < size){
-            mask = mask << 1 | 1;
-        }
-        if(i >= size && i < starting_bit){
-            mask = mask << 1;
-        }
-    }
-    int operator = mask & instruct;
-    for(int i = starting_bit; i > size; i--)
-        operator = operator >> 1 | 0;
-    operator = operator & mask_2; 
-    return operator;
+    strcpy(string, str_instrucao);
 }
 
 
@@ -265,5 +241,5 @@ char* opcodeParaString(int opcode){
             return "li";
         case(MOVE):
             return "move";
-            
+    }
 }

@@ -9,7 +9,7 @@ int busca(int *memoria,int PC);
 
 void decodificacao(instrucaoBuscada instrucao_buscada,instrucaoDecodificada *instrucao_decodificada);
 
-bool emissao(instrucaoDecodificada instrucao_decodificada);
+bool emissao(instrucaoDecodificada instrucao_decodificada, int* indice_UF_emitida);
 
 void leituraOperandos(listaExecucao instrucoes_prontas[5], int PC, int* memoria);
 
