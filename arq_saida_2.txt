@@ -220,7 +220,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			
+addi $t3 $t3 11			9			
 
 2) status das unidades funcionais
 
@@ -248,7 +248,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				
+addi $t3 $t3 11			9			10				
 
 2) status das unidades funcionais
 
@@ -276,7 +276,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				
+addi $t3 $t3 11			9			10				
 
 2) status das unidades funcionais
 
@@ -304,7 +304,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				
+addi $t3 $t3 11			9			10				
 
 2) status das unidades funcionais
 
@@ -332,7 +332,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				
+addi $t3 $t3 11			9			10				
 
 2) status das unidades funcionais
 
@@ -360,7 +360,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				
+addi $t3 $t3 11			9			10				
 
 2) status das unidades funcionais
 
@@ -388,7 +388,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			
+addi $t3 $t3 11			9			10				15			
 
 2) status das unidades funcionais
 
@@ -416,7 +416,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 
 2) status das unidades funcionais
 
@@ -436,7 +436,7 @@ uf				ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-			1						10									
+			11						10									
 
 --------------------- ciclo 17 ----------------------- 
  
@@ -444,7 +444,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			
 
 2) status das unidades funcionais
@@ -465,7 +465,7 @@ uf		ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-			1						10									
+			11						10									
 
 --------------------- ciclo 18 ----------------------- 
  
@@ -473,7 +473,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				
 
 2) status das unidades funcionais
@@ -494,7 +494,7 @@ uf		ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-			1						10									
+			11						10									
 
 --------------------- ciclo 19 ----------------------- 
  
@@ -502,7 +502,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				
 
 2) status das unidades funcionais
@@ -523,7 +523,7 @@ uf		ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-			1						10									
+			11						10									
 
 --------------------- ciclo 20 ----------------------- 
  
@@ -531,7 +531,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				
 
 2) status das unidades funcionais
@@ -552,7 +552,7 @@ uf		ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-			1						10									
+			11						10									
 
 --------------------- ciclo 21 ----------------------- 
  
@@ -560,7 +560,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				
 
 2) status das unidades funcionais
@@ -581,7 +581,7 @@ uf		ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-			1						10									
+			11						10									
 
 --------------------- ciclo 22 ----------------------- 
  
@@ -589,7 +589,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				
 
 2) status das unidades funcionais
@@ -610,7 +610,7 @@ uf		ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-			1						10									
+			11						10									
 
 --------------------- ciclo 23 ----------------------- 
  
@@ -618,7 +618,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			
 
 2) status das unidades funcionais
@@ -639,7 +639,7 @@ uf		ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-			1						10									
+			11						10									
 
 --------------------- ciclo 24 ----------------------- 
  
@@ -647,7 +647,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 
 2) status das unidades funcionais
@@ -668,7 +668,7 @@ uf		ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-	12		1						10									
+	12		11						10									
 
 --------------------- ciclo 25 ----------------------- 
  
@@ -676,7 +676,7 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			
 
@@ -698,7 +698,7 @@ uf									ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-	12		1						10									
+	12		11						10									
 
 --------------------- ciclo 26 ----------------------- 
  
@@ -706,16 +706,15 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				
-mult $t0 $t5 $t5			26			
 
 2) status das unidades funcionais
 
 
 uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
-mult1	|sim	mult	$t0	$t5	$t5			sim	sim
+mult1	|nao								
 mult2	|nao								
 add	|sim	add	$s0	$s0				sim	
 div	|nao								
@@ -724,12 +723,12 @@ log	|nao
 3) status dos registradores 
  
 	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-uf	MULT1								ADD									
+uf									ADD									
 
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-	12		1						10									
+	12		11						10									
 
 --------------------- ciclo 27 ----------------------- 
  
@@ -737,16 +736,15 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				
-mult $t0 $t5 $t5			26			27				
 
 2) status das unidades funcionais
 
 
 uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
-mult1	|sim	mult	$t0	$t5	$t5			sim	sim
+mult1	|nao								
 mult2	|nao								
 add	|sim	add	$s0	$s0				sim	
 div	|nao								
@@ -755,12 +753,12 @@ log	|nao
 3) status dos registradores 
  
 	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-uf	MULT1								ADD									
+uf									ADD									
 
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-	12		1						10									
+	12		11						10									
 
 --------------------- ciclo 28 ----------------------- 
  
@@ -768,16 +766,15 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				
-mult $t0 $t5 $t5			26			27				28			
 
 2) status das unidades funcionais
 
 
 uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
-mult1	|sim	mult	$t0	$t5	$t5			sim	sim
+mult1	|nao								
 mult2	|nao								
 add	|sim	add	$s0	$s0				sim	
 div	|nao								
@@ -786,12 +783,12 @@ log	|nao
 3) status dos registradores 
  
 	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-uf	MULT1								ADD									
+uf									ADD									
 
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-	12		1						10									
+	12		11						10									
 
 --------------------- ciclo 29 ----------------------- 
  
@@ -799,16 +796,15 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				
-mult $t0 $t5 $t5			26			27				28			29
 
 2) status das unidades funcionais
 
 
 uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
-mult1	|sim	mult	$t0	$t5	$t5			sim	sim
+mult1	|nao								
 mult2	|nao								
 add	|sim	add	$s0	$s0				sim	
 div	|nao								
@@ -817,12 +813,12 @@ log	|nao
 3) status dos registradores 
  
 	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-uf	MULT1								ADD									
+uf									ADD									
 
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1						10									
+	12		11						10									
 
 --------------------- ciclo 30 ----------------------- 
  
@@ -830,10 +826,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				
-mult $t0 $t5 $t5			26			27				28			29
 
 2) status das unidades funcionais
 
@@ -853,7 +848,7 @@ uf									ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1						10									
+	12		11						10									
 
 --------------------- ciclo 31 ----------------------- 
  
@@ -861,10 +856,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			
-mult $t0 $t5 $t5			26			27				28			29
 
 2) status das unidades funcionais
 
@@ -884,7 +878,7 @@ uf									ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1						10									
+	12		11						10									
 
 --------------------- ciclo 32 ----------------------- 
  
@@ -892,10 +886,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 
 2) status das unidades funcionais
 
@@ -915,7 +908,7 @@ uf									ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1					13	10									
+	12		11					13	10									
 
 --------------------- ciclo 33 ----------------------- 
  
@@ -923,10 +916,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			
 
 2) status das unidades funcionais
@@ -947,7 +939,7 @@ uf	ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1					13	10									
+	12		11					13	10									
 
 --------------------- ciclo 34 ----------------------- 
  
@@ -955,10 +947,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				
 
 2) status das unidades funcionais
@@ -979,7 +970,7 @@ uf	ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1					13	10									
+	12		11					13	10									
 
 --------------------- ciclo 35 ----------------------- 
  
@@ -987,10 +978,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				
 
 2) status das unidades funcionais
@@ -1011,7 +1001,7 @@ uf	ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1					13	10									
+	12		11					13	10									
 
 --------------------- ciclo 36 ----------------------- 
  
@@ -1019,10 +1009,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				
 
 2) status das unidades funcionais
@@ -1043,7 +1032,7 @@ uf	ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1					13	10									
+	12		11					13	10									
 
 --------------------- ciclo 37 ----------------------- 
  
@@ -1051,10 +1040,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				
 
 2) status das unidades funcionais
@@ -1075,7 +1063,7 @@ uf	ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1					13	10									
+	12		11					13	10									
 
 --------------------- ciclo 38 ----------------------- 
  
@@ -1083,10 +1071,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				
 
 2) status das unidades funcionais
@@ -1107,7 +1094,7 @@ uf	ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1					13	10									
+	12		11					13	10									
 
 --------------------- ciclo 39 ----------------------- 
  
@@ -1115,10 +1102,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				
 
 2) status das unidades funcionais
@@ -1139,7 +1125,7 @@ uf	ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1					13	10									
+	12		11					13	10									
 
 --------------------- ciclo 40 ----------------------- 
  
@@ -1147,10 +1133,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				
 
 2) status das unidades funcionais
@@ -1171,7 +1156,7 @@ uf	ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1					13	10									
+	12		11					13	10									
 
 --------------------- ciclo 41 ----------------------- 
  
@@ -1179,10 +1164,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				
 
 2) status das unidades funcionais
@@ -1203,7 +1187,7 @@ uf	ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1					13	10									
+	12		11					13	10									
 
 --------------------- ciclo 42 ----------------------- 
  
@@ -1211,10 +1195,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				
 
 2) status das unidades funcionais
@@ -1235,7 +1218,7 @@ uf	ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1					13	10									
+	12		11					13	10									
 
 --------------------- ciclo 43 ----------------------- 
  
@@ -1243,10 +1226,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				
 
 2) status das unidades funcionais
@@ -1267,7 +1249,7 @@ uf	ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1					13	10									
+	12		11					13	10									
 
 --------------------- ciclo 44 ----------------------- 
  
@@ -1275,10 +1257,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				44			
 
 2) status das unidades funcionais
@@ -1299,7 +1280,7 @@ uf	ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-0	12		1					13	10									
+	12		11					13	10									
 
 --------------------- ciclo 45 ----------------------- 
  
@@ -1307,10 +1288,9 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				44			45
 
 2) status das unidades funcionais
@@ -1331,7 +1311,7 @@ uf	ADD
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-11	12		1					13	10									
+21	12		11					13	10									
 
 --------------------- ciclo 46 ----------------------- 
  
@@ -1339,32 +1319,31 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				44			45
-move $t0 $t1			46			
+mult $t0 $t1 $s0			46			
 
 2) status das unidades funcionais
 
 
 uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
-mult1	|nao								
+mult1	|sim	mult	$t0	$t1	$s0			sim	sim
 mult2	|nao								
 add	|nao								
 div	|nao								
-log	|sim	move	$t0	$t1				sim	sim
+log	|nao								
 
 3) status dos registradores 
  
 	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-uf	LOG																	
+uf	MULT1																	
 
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-11	12		1					13	10									
+21	12		11					13	10									
 
 --------------------- ciclo 47 ----------------------- 
  
@@ -1372,32 +1351,31 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				44			45
-move $t0 $t1			46			47				
+mult $t0 $t1 $s0			46			47				
 
 2) status das unidades funcionais
 
 
 uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
-mult1	|nao								
+mult1	|sim	mult	$t0	$t1	$s0			sim	sim
 mult2	|nao								
 add	|nao								
 div	|nao								
-log	|sim	move	$t0	$t1				sim	
+log	|nao								
 
 3) status dos registradores 
  
 	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-uf	LOG																	
+uf	MULT1																	
 
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-11	12		1					13	10									
+21	12		11					13	10									
 
 --------------------- ciclo 48 ----------------------- 
  
@@ -1405,32 +1383,31 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				44			45
-move $t0 $t1			46			47				48			
+mult $t0 $t1 $s0			46			47				48			
 
 2) status das unidades funcionais
 
 
 uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
-mult1	|nao								
+mult1	|sim	mult	$t0	$t1	$s0			sim	sim
 mult2	|nao								
 add	|nao								
 div	|nao								
-log	|sim	move	$t0	$t1				sim	
+log	|nao								
 
 3) status dos registradores 
  
 	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-uf	LOG																	
+uf	MULT1																	
 
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-11	12		1					13	10									
+21	12		11					13	10									
 
 --------------------- ciclo 49 ----------------------- 
  
@@ -1438,32 +1415,31 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				44			45
-move $t0 $t1			46			47				48			49
+mult $t0 $t1 $s0			46			47				48			49
 
 2) status das unidades funcionais
 
 
 uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
-mult1	|nao								
+mult1	|sim	mult	$t0	$t1	$s0			sim	sim
 mult2	|nao								
 add	|nao								
 div	|nao								
-log	|sim	move	$t0	$t1				sim	
+log	|nao								
 
 3) status dos registradores 
  
 	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-uf	LOG																	
+uf	MULT1																	
 
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-12	12		1					13	10									
+156	12		11					13	10									
 
 --------------------- ciclo 50 ----------------------- 
  
@@ -1471,12 +1447,11 @@ $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|
  
 				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
 addi $s1 $s1 10			1			2				7			8
-addi $t3 $t3 1			9			10				15			16
+addi $t3 $t3 11			9			10				15			16
 addi $t1 $t1 12			17			18				23			24
 addi $s0 $s0 13			25			26				31			32
-mult $t0 $t5 $t5			26			27				28			29
 add $t0 $s1 $t3			33			34				44			45
-move $t0 $t1			46			47				48			49
+mult $t0 $t1 $s0			46			47				48			49
 
 2) status das unidades funcionais
 
@@ -1496,5 +1471,5 @@ uf
 4) banco de registradores 
  
 $t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
-12	12		1					13	10									
+156	12		11					13	10									
 

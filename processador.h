@@ -50,14 +50,14 @@ void limpaEstruturas(int instrucoes_escritas[5], resultadoExec lista_resultados[
 listaExecucao instrucoes_prontas[5], instrucaoExecutando lista_instrucoes_executando[5],
 UnidadeFuncional vetor_UF[5], enum UF status_dos_registradores[32], int clock_instrucoes_lidas[5]);
 
-void atualizaDependencias(UnidadeFuncional vetor_UF[5]);
+void atualizaDependencias(UnidadeFuncional vetor_UF[5], emissoes lista_emissoes);
 
 int verificaRegistradorOcupado(int8_t registrador, int indice_UF, 
 UnidadeFuncional vetor_UF[5], emissoes lista_emissoes);
 
-void preencheStatusRegistradorRk(int indice, int8_t registrador, UnidadeFuncional vetor_UF[5]);
+void preencheStatusRegistradorRk(int indice, int8_t registrador, UnidadeFuncional vetor_UF[5], emissoes lista_emissoes);
 
-void preencheStatusRegistradorRj(int indice, int8_t registrador, UnidadeFuncional vetor_UF[5]);
+void preencheStatusRegistradorRj(int indice, int8_t registrador, UnidadeFuncional vetor_UF[5], emissoes lista_emissoes);
 
 void limpaAuxiliares(int indice, resultadoExec lista_resultados[5], 
 listaExecucao instrucoes_prontas[5],
@@ -88,14 +88,15 @@ UnidadeFuncional vetor_UF[5], emissoes lista_emissoes);
 
 void preencheOcupacaoStatusUF(int indice_UF, UnidadeFuncional vetor_UF[5], emissoes lista_emissoes);
 
-bool verificaTermino(int PC, int tamanho_memoria, instrucaoDecodificada instrucao_decodificada);
+bool verificaTermino(int PC, int tamanho_memoria, instrucaoDecodificada instrucao_decodificada, UnidadeFuncional vetor_UF[5]);
 
 int opcodeParaNumCiclos(int opcode);
 
+
 void initScoreboarding(int *memoria, int tamanho_memoria, listaExecucao instrucoes_prontas[5], 
 bool *acabou_de_executar, instrucaoExecutando lista_instrucoes_executando[5], 
-resultadoExec lista_resultados[5], int instrucoes_escritas[5], int clock_processador,
+resultadoExec lista_resultados[5], int instrucoes_escritas[5], int *clock_processador,
 UnidadeFuncional vetor_UF[5], enum UF status_dos_registradores[32],bool flag_registradores[32],
-emissoes *lista_emissoes, int clock_instrucoes_lidas[5], int banco_registradores[32]);
+emissoes *lista_emissoes, int clock_instrucoes_lidas[5], int banco_registradores[32],statusInst *status_instrucoes);
 
 #endif

@@ -46,7 +46,7 @@ int main(int argc, char **argv){
     int s, opt, tamanho_memoria_1, tamanho_memoria_2;
     char *config, *saida[2], *programa[2], *str_tamanho_memoria[2];
     void *res;
-
+    pthread_attr_t attr;
     if ( argc < 2 ) mostrarAjuda(argv[0]);
 
     while( (opt = getopt(argc, argv, "hc:o:q:p:r:m:n:")) > 0 ) {
@@ -80,6 +80,9 @@ int main(int argc, char **argv){
                 return -1;
         }
     }
+    printf("to na main \n");
+    s = pthread_attr_init(&attr);
+    
 
     tamanho_memoria_1 = atoi(str_tamanho_memoria[0]);
     tamanho_memoria_2 = atoi(str_tamanho_memoria[1]);
@@ -100,13 +103,23 @@ int main(int argc, char **argv){
     
     for(int i = 0; i < tamanho_memoria_1; i++){
         linhas_instrucoes_1[i] = malloc(64);
+       
+    }
+
+    for(int i = 0; i < tamanho_memoria_2; i++){
+        
         linhas_instrucoes_2[i] = malloc(64);
     }
 
+
+    printf("entrando na conversao \n");
     conversor(programa[0], memoria_1, linhas_instrucoes_1, tamanho_memoria_1);
 
+    printf("Programa 2 : %s \n",programa[1]);
+    
     conversor(programa[1], memoria_2, linhas_instrucoes_2, tamanho_memoria_2);
 
+    printf("saindo  na conversao \n");
     lerArquivoConfiguracao(config);
     
     /*
@@ -116,18 +129,25 @@ int main(int argc, char **argv){
     */
     
     tInfo* t_info = malloc(sizeof(tInfo) * 2);
-
+    
     tInfo_init(&t_info[FLUXO_1], FLUXO_1, memoria_1, tamanho_memoria_1, saida[FLUXO_1], linhas_instrucoes_1);
     tInfo_init(&t_info[FLUXO_2], FLUXO_2, memoria_2, tamanho_memoria_2, saida[FLUXO_2], linhas_instrucoes_2);
-
+    
+    printf("Nome saida: %s\n\n",t_info[FLUXO_1].nome_arq_saida);
+    printf("Nome saida: %s\n\n",t_info[FLUXO_2].nome_arq_saida);
+    
     for(int i = 0; i < 2; i++) {
-        s = pthread_create(&t_info[i].thread_id, NULL,
-		       &scoreboarding, &t_info[0]);
+        s = pthread_create(&t_info[i].thread_id, &attr,
+		       &scoreboarding, &t_info[i]);
         if(s != 0){
             printf("Erro ao criar a thread %d!\n", i);
         }
 
     } 
+
+    s = pthread_attr_destroy(&attr);
+    if (s != 0)
+        printf("Erro pthread destroy");
 
     for(int i = 0; i < 2; i++) {
         s = pthread_join(t_info[i].thread_id, &res);

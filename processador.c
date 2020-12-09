@@ -4,6 +4,8 @@
 #include <math.h>
 
 void* scoreboarding(void *arg){
+    tInfo *t_info = arg;
+
     // VARIAVEIS EX-GLOBAIS
     int clock_processador;
     statusInst status_instrucoes;           // Status das instrucoes
@@ -15,20 +17,22 @@ void* scoreboarding(void *arg){
     emissoes lista_emissoes;
     int clock_instrucoes_lidas[5];
 
-
-    tInfo *t_info = arg;
     /* Dados t_info */
     int *memoria = t_info->memoria;
     int tamanho_memoria = t_info->tamanho_memoria;
     char *nome_arq_saida;
     nome_arq_saida = t_info->nome_arq_saida;
+
+    printf("Nome saida do t_info: %s e thread NUM : %d\n\n",t_info->nome_arq_saida, t_info->thread_num);
+    
+    
     char linhas_instrucoes[tamanho_memoria][64];
 
     for (int i = 0; i < tamanho_memoria; i++)
     {
         strcpy(linhas_instrucoes[i], t_info->linhas_instrucoes[i]);
     }
-    /***/
+    /**
 
     for (int i = 0; i < tamanho_memoria; i++)
     {
@@ -37,7 +41,7 @@ void* scoreboarding(void *arg){
     }
     printf("Tamanho da memoria: %d\n", tamanho_memoria);
     printf("Nome do arquivo de saida: %s\n", nome_arq_saida);
-
+    */
     //Estruturas Auxiliares
     listaExecucao instrucoes_prontas[5];
     instrucaoExecutando lista_instrucoes_executando[5];
@@ -51,16 +55,16 @@ void* scoreboarding(void *arg){
     limpaDecodificacao(&instrucao_decodificada);
 
     initScoreboarding(memoria, tamanho_memoria, instrucoes_prontas, &acabou_de_executar, 
-    lista_instrucoes_executando, lista_resultados, instrucoes_escritas, clock_processador,
+    lista_instrucoes_executando, lista_resultados, instrucoes_escritas, &clock_processador,
     vetor_UF, status_dos_registradores, flag_registradores,
-     &lista_emissoes, clock_instrucoes_lidas, banco_registradores);
+     &lista_emissoes, clock_instrucoes_lidas, banco_registradores, &status_instrucoes);
     int PC = 0;
     FILE *arq_saida;
     arq_saida = fopen(nome_arq_saida, "w");
 
     do
     {
-        printf("\n======== CLOCK %d ========\n", clock_processador);
+        //printf("\n======== CLOCK %d ========\n", clock_processador);
         escritaResultados(lista_resultados, instrucoes_escritas, 
         clock_processador, &status_instrucoes, banco_registradores, 
         vetor_UF, flag_registradores, lista_emissoes, clock_instrucoes_lidas);
@@ -90,24 +94,25 @@ void* scoreboarding(void *arg){
                 PC += 1;
             }
         }
-
+        printf("\nClock do processador (%d) %d \n \n",t_info->thread_num,clock_processador);
         saida(arq_saida, PC, linhas_instrucoes, clock_processador,
         status_instrucoes, vetor_UF, status_dos_registradores, 
         banco_registradores, flag_registradores);
         limpaEstruturas(instrucoes_escritas, lista_resultados, 
         instrucoes_prontas, lista_instrucoes_executando, vetor_UF,
         status_dos_registradores, clock_instrucoes_lidas);
-        atualizaDependencias(vetor_UF);
+        atualizaDependencias(vetor_UF, lista_emissoes);
         //checa se alguma Unidade Funcional ainda tem processos a fazer
-        acabou_de_executar = verificaTermino(PC, tamanho_memoria, instrucao_decodificada);
+        acabou_de_executar = verificaTermino(PC, tamanho_memoria, instrucao_decodificada,vetor_UF);
 
         clock_processador += 1;
     } while (!acabou_de_executar);
-
+    
     saida(arq_saida, PC, linhas_instrucoes, clock_processador,
         status_instrucoes, vetor_UF, status_dos_registradores, 
         banco_registradores, flag_registradores);
     fclose(arq_saida);
+    
     return 0;
 }
 
@@ -216,7 +221,7 @@ emissoes *lista_emissoes, int clock_instrucoes_lidas[5])
                 instrucoes_prontas[i].ja_executou = false;
                 instrucoes_prontas[i].clock_lido = clock_processador;
                 clock_instrucoes_lidas[i] = clock_processador;
-                printf("\nInstrucao n %d foi lida no clock %d! \n", PC, instrucoes_prontas[i].clock_lido);
+                //printf("\nInstrucao n %d foi lida no clock %d! \n", PC, instrucoes_prontas[i].clock_lido);
                 preencheStatusInstrucoes(LEITURA_OPERANDOS, lista_emissoes->PC_emitido[i],
                  clock_processador, status_instrucoes);
             }
@@ -291,28 +296,25 @@ bool verificaWAR(int reg_destino, int indice_UF_atual,
         }
         if (lista_emissoes.PC_emitido[indice_UF_atual] > lista_emissoes.PC_emitido[i])
         { // só verifica a leitura em inst passadas
-            printf("Entrei sim i = %d \n", i);
+            
             if (reg_destino == vetor_UF[i].Fj || reg_destino == vetor_UF[i].Fk)
             { // encontrou war
-                printf("Encontrou WAR na op que está na UF %s\n", converteNomeUF(indice_UF_atual));
 
                 if (!strcmp(vetor_UF[i].Rj, "sim") && !strcmp(vetor_UF[i].Rk, "sim"))
                 { //
-                    printf("CLOCK LIDO = %d CLOCK ATUAL = %d \n", clock_instrucoes_lidas[i], clock_processador);
+                    
                     if (clock_processador > clock_instrucoes_lidas[i])
                     {
                         if (clock_instrucoes_lidas[i] != -1)
                         {
-                            printf("Deu certo, falsezada\n");
+                            
                             return false;
                         }
-                        printf("Motivo: clock_lido == -1\n");
+                        
                         return true;
                     }
-                    printf("Motivo: clock lido < clock atual, pois %d (clock lido) é menor que %d (clock atual)\n", clock_instrucoes_lidas[i], clock_processador);
                     return true;
                 }
-                printf("Porque o strcmp deu errado!\n");
                 return true;
             }
         }
@@ -335,8 +337,7 @@ void escritaResultados(resultadoExec lista_resultados[5],
         if (verificaWAR(vetor_UF[i].Fi, i, clock_processador, 
         vetor_UF, lista_emissoes, clock_instrucoes_lidas))
         {
-            printf("Tem WAR na instrucao que está na UF %s, no clock %d\n", 
-            converteNomeUF(i), clock_processador);
+            converteNomeUF(i);
             continue;
         }
         instrucoes_escritas[i] = 1;
@@ -364,12 +365,12 @@ UnidadeFuncional vetor_UF[5], enum UF status_dos_registradores[32], int clock_in
     }
 }
 
-void atualizaDependencias(UnidadeFuncional vetor_UF[5])
+void atualizaDependencias(UnidadeFuncional vetor_UF[5], emissoes lista_emissoes)
 {
     for (int i = 0; i < 5; i++)
     {
-        preencheStatusRegistradorRj(i, vetor_UF[i].Fj, vetor_UF);
-        preencheStatusRegistradorRk(i, vetor_UF[i].Fk, vetor_UF);
+        preencheStatusRegistradorRj(i, vetor_UF[i].Fj, vetor_UF, lista_emissoes);
+        preencheStatusRegistradorRk(i, vetor_UF[i].Fk, vetor_UF, lista_emissoes);
     }
 }
 
@@ -392,7 +393,7 @@ UnidadeFuncional vetor_UF[5], emissoes lista_emissoes)
     }
     return -1;
 }
-void preencheStatusRegistradorRk(int indice, int8_t registrador, UnidadeFuncional vetor_UF[5])
+void preencheStatusRegistradorRk(int indice, int8_t registrador, UnidadeFuncional vetor_UF[5], emissoes lista_emissoes)
 {
     int registrador_ocupado = verificaRegistradorOcupado(registrador, indice, 
     vetor_UF, lista_emissoes);
@@ -417,7 +418,7 @@ void preencheStatusRegistradorRk(int indice, int8_t registrador, UnidadeFunciona
     }
 }
 
-void preencheStatusRegistradorRj(int indice, int8_t registrador, UnidadeFuncional vetor_UF[5])
+void preencheStatusRegistradorRj(int indice, int8_t registrador, UnidadeFuncional vetor_UF[5], emissoes lista_emissoes)
 {
     int registrador_ocupado = verificaRegistradorOcupado(registrador, indice, 
     vetor_UF, lista_emissoes);
@@ -660,7 +661,7 @@ UnidadeFuncional vetor_UF[5], emissoes lista_emissoes)
     strcpy(vetor_UF[indice_UF].op, opcodeParaOperacao(opcode));
     vetor_UF[indice_UF].Fi = recuperaCampo(instrucao, 5, 26);
     vetor_UF[indice_UF].Fj = recuperaCampo(instrucao, 5, 21);
-    preencheStatusRegistradorRj(indice_UF, vetor_UF[indice_UF].Fj, vetor_UF);
+    preencheStatusRegistradorRj(indice_UF, vetor_UF[indice_UF].Fj, vetor_UF,lista_emissoes);
 
     if (verificaLi(opcode))
     { // se for Li
@@ -677,7 +678,7 @@ UnidadeFuncional vetor_UF[5], emissoes lista_emissoes)
     else if (!verificaImediato(opcode))
     { //se for normal
         vetor_UF[indice_UF].Fk = recuperaCampo(instrucao, 5, 16);
-        preencheStatusRegistradorRk(indice_UF, vetor_UF[indice_UF].Fk, vetor_UF);
+        preencheStatusRegistradorRk(indice_UF, vetor_UF[indice_UF].Fk, vetor_UF,lista_emissoes);
     }
     else
     { // se for imediato
@@ -716,7 +717,8 @@ void preencheOcupacaoStatusUF(int indice_UF, UnidadeFuncional vetor_UF[5], emiss
     }
 }
 
-bool verificaTermino(int PC, int tamanho_memoria, instrucaoDecodificada instrucao_decodificada)
+bool verificaTermino(int PC, int tamanho_memoria, instrucaoDecodificada instrucao_decodificada,
+ UnidadeFuncional vetor_UF[5])
 {
     for (int j = 0; j < 5; j++)
     {
@@ -758,17 +760,19 @@ int opcodeParaNumCiclos(int opcode)
 
 void initScoreboarding(int *memoria, int tamanho_memoria, listaExecucao instrucoes_prontas[5], 
 bool *acabou_de_executar, instrucaoExecutando lista_instrucoes_executando[5], 
-resultadoExec lista_resultados[5], int instrucoes_escritas[5], int clock_processador,
+resultadoExec lista_resultados[5], int instrucoes_escritas[5], int *clock_processador,
 UnidadeFuncional vetor_UF[5], enum UF status_dos_registradores[32],bool flag_registradores[32],
-emissoes *lista_emissoes, int clock_instrucoes_lidas[5], int banco_registradores[32])
+emissoes *lista_emissoes, int clock_instrucoes_lidas[5], int banco_registradores[32], statusInst *status_instrucoes)
 {
-    status_instrucoes.instrucoes = memoria; // recebe todas as instrucoes
-    status_instrucoes.emissao = (int *)calloc(sizeof(int), tamanho_memoria);
-    status_instrucoes.leituraOP = (int *)calloc(sizeof(int), tamanho_memoria);
-    status_instrucoes.execucao = (int *)calloc(sizeof(int), tamanho_memoria);
-    status_instrucoes.escrita = (int *)calloc(sizeof(int), tamanho_memoria);
+    printf("Cheguei na init Score !! \n");
+    status_instrucoes->instrucoes = memoria; // recebe todas as instrucoes
+    status_instrucoes->emissao = (int *)calloc(sizeof(int), tamanho_memoria);
+    status_instrucoes->leituraOP = (int *)calloc(sizeof(int), tamanho_memoria);
+    status_instrucoes->execucao = (int *)calloc(sizeof(int), tamanho_memoria);
+    status_instrucoes->escrita = (int *)calloc(sizeof(int), tamanho_memoria);
 
-    clock_processador = 1;
+    *clock_processador = 1;
+    
     *acabou_de_executar = false;
 
     for (int i = 0; i < 5; i++)
