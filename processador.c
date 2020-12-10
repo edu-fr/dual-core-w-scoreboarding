@@ -126,7 +126,6 @@ void limpaBusca(instrucaoBuscada *instrucao_buscada)
 void limpaDecodificacao(instrucaoDecodificada *instrucao_decodificada)
 {
     instrucao_decodificada->opcode = 0;
-    instrucao_decodificada->indice_UF = 0;
     instrucao_decodificada->instrucao_completa = 0;
     instrucao_decodificada->PC_busca = 0;
     instrucao_decodificada->Fi = -1;
@@ -143,10 +142,8 @@ int busca(int *memoria, int PC)
 void decodificacao(instrucaoBuscada instrucao_buscada, instrucaoDecodificada *instrucao_decodificada)
 {
     instrucao_decodificada->opcode = recuperaCampo(instrucao_buscada.instrucao, 6, 32); //extrai o opcode da instruçao
-    instrucao_decodificada->indice_UF = opcodeParaUF(instrucao_decodificada->opcode);   //extrai a UF em que a instrucao deve ir
     instrucao_decodificada->instrucao_completa = instrucao_buscada.instrucao;
     instrucao_decodificada->PC_busca = instrucao_buscada.PC_busca;
-
     instrucao_decodificada->Fi = recuperaCampo(instrucao_decodificada->instrucao_completa, 5, 26);
     instrucao_decodificada->Fj = recuperaCampo(instrucao_decodificada->instrucao_completa, 5, 21);
     instrucao_decodificada->Fk = recuperaCampo(instrucao_decodificada->instrucao_completa, 5, 16);
@@ -168,7 +165,8 @@ bool emissao(instrucaoDecodificada instrucao_decodificada,
 int clock_processador, statusInst *status_instrucoes, UnidadeFuncional vetor_UF[5],
 enum UF status_dos_registradores[32], emissoes *lista_emissoes)
 {
-    if (instrucao_decodificada.indice_UF == 0)
+    int indice_UF = opcodeParaUF(instrucao_decodificada.opcode);
+    if (indice_UF == 0)
     { // É uma instrucao mult
         if (strcmp(vetor_UF[0].busy, "nao") == 0)
         { // Se UF Mult1 está livre, então
@@ -178,12 +176,12 @@ enum UF status_dos_registradores[32], emissoes *lista_emissoes)
         { // se UF Mult1 está ocupada, testa UF Mult2
             if (strcmp(vetor_UF[1].busy, "nao") == 0)
             {
-                instrucao_decodificada.indice_UF = 1;
+                indice_UF = 1;
             }
         }
     }
 
-    if (strcmp(vetor_UF[instrucao_decodificada.indice_UF].busy, "sim") == 0)
+    if (strcmp(vetor_UF[indice_UF].busy, "sim") == 0)
     {
         return false;
     }
@@ -193,14 +191,14 @@ enum UF status_dos_registradores[32], emissoes *lista_emissoes)
     }
     else
     {
-        preencheStatusUF(instrucao_decodificada.indice_UF, 
+        preencheStatusUF(indice_UF, 
          instrucao_decodificada.Fi, instrucao_decodificada.Fj, instrucao_decodificada.Fk,
          instrucao_decodificada.opcode, vetor_UF, *lista_emissoes); //
-        lista_emissoes->opcodes_emitidos[instrucao_decodificada.indice_UF] = instrucao_decodificada.opcode;
-        lista_emissoes->instrucoes_emitidas[instrucao_decodificada.indice_UF] = instrucao_decodificada.instrucao_completa; //
-        lista_emissoes->PC_emitido[instrucao_decodificada.indice_UF] = instrucao_decodificada.PC_busca;
+        lista_emissoes->opcodes_emitidos[indice_UF] = instrucao_decodificada.opcode;
+        lista_emissoes->instrucoes_emitidas[indice_UF] = instrucao_decodificada.instrucao_completa; //
+        lista_emissoes->PC_emitido[indice_UF] = instrucao_decodificada.PC_busca;
         preencheStatusInstrucoes(EMISSAO, instrucao_decodificada.PC_busca, clock_processador, status_instrucoes);
-        status_dos_registradores[vetor_UF[instrucao_decodificada.indice_UF].Fi] = instrucao_decodificada.indice_UF;
+        status_dos_registradores[vetor_UF[indice_UF].Fi] = indice_UF;
         return true;
     }
 }

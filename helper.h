@@ -23,7 +23,6 @@ typedef struct {
 
 typedef struct {
     int opcode;
-    int indice_UF;
     int instrucao_completa;
     int PC_busca;
     int Fi;
