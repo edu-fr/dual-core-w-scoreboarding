@@ -128,6 +128,9 @@ void limpaDecodificacao(instrucaoDecodificada *instrucao_decodificada)
     instrucao_decodificada->indice_UF = 0;
     instrucao_decodificada->instrucao_completa = 0;
     instrucao_decodificada->PC_busca = 0;
+    instrucao_decodificada->Fi = -1;
+    instrucao_decodificada->Fj = -1;
+    instrucao_decodificada->Fk = -1;
 }
 
 int busca(int *memoria, int PC)
@@ -142,6 +145,10 @@ void decodificacao(instrucaoBuscada instrucao_buscada, instrucaoDecodificada *in
     instrucao_decodificada->indice_UF = opcodeParaUF(instrucao_decodificada->opcode);   //extrai a UF em que a instrucao deve ir
     instrucao_decodificada->instrucao_completa = instrucao_buscada.instrucao;
     instrucao_decodificada->PC_busca = instrucao_buscada.PC_busca;
+
+    instrucao_decodificada->Fi = recuperaCampo(instrucao_decodificada->instrucao_completa, 5, 26);
+    instrucao_decodificada->Fj = recuperaCampo(instrucao_decodificada->instrucao_completa, 5, 21);
+    instrucao_decodificada->Fk = recuperaCampo(instrucao_decodificada->instrucao_completa, 5, 16);
 }
 
 bool verificaWAW(int destino_nova, UnidadeFuncional vetor_UF[5])
@@ -160,8 +167,6 @@ bool emissao(instrucaoDecodificada instrucao_decodificada,
 int clock_processador, statusInst *status_instrucoes, UnidadeFuncional vetor_UF[5],
 enum UF status_dos_registradores[32], emissoes *lista_emissoes)
 {
-    int destino_nova = recuperaCampo(instrucao_decodificada.instrucao_completa, 5, 26);
-
     if (instrucao_decodificada.indice_UF == 0)
     { // É uma instrucao mult
         if (strcmp(vetor_UF[0].busy, "nao") == 0)
@@ -181,14 +186,14 @@ enum UF status_dos_registradores[32], emissoes *lista_emissoes)
     {
         return false;
     }
-    if (verificaWAW(destino_nova, vetor_UF))
+    if (verificaWAW(instrucao_decodificada.Fi, vetor_UF))
     {
         return false;
     }
     else
     {
         preencheStatusUF(instrucao_decodificada.indice_UF, 
-        instrucao_decodificada.instrucao_completa,
+         instrucao_decodificada.Fi, instrucao_decodificada.Fj, instrucao_decodificada.Fk,
          instrucao_decodificada.opcode, vetor_UF, *lista_emissoes); //
         lista_emissoes->opcodes_emitidos[instrucao_decodificada.indice_UF] = instrucao_decodificada.opcode;
         lista_emissoes->instrucoes_emitidas[instrucao_decodificada.indice_UF] = instrucao_decodificada.instrucao_completa; //
@@ -653,14 +658,14 @@ bool verificaLi(int opcode)
     return false;
 }
 
-void preencheStatusUF(int indice_UF, int instrucao, int opcode, 
+void preencheStatusUF(int indice_UF, int Fi, int Fj, int Fk, int opcode, 
 UnidadeFuncional vetor_UF[5], emissoes lista_emissoes)
 {
     /* Preenche a linha do status das unidades funcionais */
     strcpy(vetor_UF[indice_UF].busy, "sim");
     strcpy(vetor_UF[indice_UF].op, opcodeParaOperacao(opcode));
-    vetor_UF[indice_UF].Fi = recuperaCampo(instrucao, 5, 26);
-    vetor_UF[indice_UF].Fj = recuperaCampo(instrucao, 5, 21);
+    vetor_UF[indice_UF].Fi = Fi;
+    vetor_UF[indice_UF].Fj = Fj;
     preencheStatusRegistradorRj(indice_UF, vetor_UF[indice_UF].Fj, vetor_UF,lista_emissoes);
 
     if (verificaLi(opcode))
@@ -677,7 +682,7 @@ UnidadeFuncional vetor_UF[5], emissoes lista_emissoes)
     }
     else if (!verificaImediato(opcode))
     { //se for normal
-        vetor_UF[indice_UF].Fk = recuperaCampo(instrucao, 5, 16);
+        vetor_UF[indice_UF].Fk = Fk;
         preencheStatusRegistradorRk(indice_UF, vetor_UF[indice_UF].Fk, vetor_UF,lista_emissoes);
     }
     else

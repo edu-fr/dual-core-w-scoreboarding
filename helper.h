@@ -26,6 +26,9 @@ typedef struct {
     int indice_UF;
     int instrucao_completa;
     int PC_busca;
+    int Fi;
+    int Fj;
+    int Fk;
 }instrucaoDecodificada;
 
 typedef struct{

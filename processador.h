@@ -83,7 +83,7 @@ bool verificaMove(int opcode);
 
 bool verificaLi(int opcode);
 
-void preencheStatusUF(int indice_UF, int instrucao, int opcode, 
+void preencheStatusUF(int indice_UF, int Fi, int Fj, int Fk, int opcode, 
 UnidadeFuncional vetor_UF[5], emissoes lista_emissoes);
 
 void preencheOcupacaoStatusUF(int indice_UF, UnidadeFuncional vetor_UF[5], emissoes lista_emissoes);
