@@ -22,7 +22,7 @@ enum UF status_dos_registradores[32], emissoes *lista_emissoes);
 
 void leituraOperandos(listaExecucao instrucoes_prontas[5], int PC, int *memoria, 
 int clock_processador, statusInst *status_instrucoes, UnidadeFuncional vetor_UF[5],
-emissoes *lista_emissoes, int clock_instrucoes_lidas[5]);
+emissoes *lista_emissoes, int clock_instrucoes_lidas[5], int banco_registradores[32]);
 
 void execucao(listaExecucao instrucoes_prontas[5], 
 instrucaoExecutando lista_instrucoes_executando[5], resultadoExec lista_resultados[5], 

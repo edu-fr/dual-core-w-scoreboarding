@@ -66,9 +66,10 @@ typedef struct{ // Representação dos barramentos
     int PC;
     int clock_lido;
     int opcode;
-    int destino;
-    int operando1;
-    int operando2;
+    int Fi;
+    int Fi_valor;
+    int Fj_valor;
+    int Fk_valor;
     bool ja_executou;
 } listaExecucao;
 

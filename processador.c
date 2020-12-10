@@ -71,7 +71,8 @@ void* scoreboarding(void *arg){
         execucao(instrucoes_prontas, lista_instrucoes_executando, 
         lista_resultados, clock_processador, &status_instrucoes, banco_registradores);
         leituraOperandos(instrucoes_prontas, PC - 1, memoria,
-        clock_processador, &status_instrucoes, vetor_UF, &lista_emissoes, clock_instrucoes_lidas);
+        clock_processador, &status_instrucoes, vetor_UF, &lista_emissoes, 
+        clock_instrucoes_lidas, banco_registradores);
 
         if (PC < tamanho_memoria)
         {
@@ -206,7 +207,7 @@ enum UF status_dos_registradores[32], emissoes *lista_emissoes)
 
 void leituraOperandos(listaExecucao instrucoes_prontas[5], int PC, int *memoria, 
 int clock_processador, statusInst *status_instrucoes, UnidadeFuncional vetor_UF[5],
-emissoes *lista_emissoes, int clock_instrucoes_lidas[5])
+emissoes *lista_emissoes, int clock_instrucoes_lidas[5], int banco_registradores[32])
 {
     for (int i = 0; i < 5; i++)
     {
@@ -219,10 +220,11 @@ emissoes *lista_emissoes, int clock_instrucoes_lidas[5])
                 instrucoes_prontas[i].opcode = lista_emissoes->opcodes_emitidos[i];
                 instrucoes_prontas[i].PC = lista_emissoes->PC_emitido[i];
                 lista_emissoes->opcodes_emitidos[i] = -1; // Garante que essa instrucao nao sera lida novamente
-                instrucoes_prontas[i].destino = vetor_UF[i].Fi;
+                instrucoes_prontas[i].Fi = vetor_UF[i].Fi;
+                instrucoes_prontas[i].Fi_valor = banco_registradores[vetor_UF[i].Fi];
+                instrucoes_prontas[i].Fj_valor = banco_registradores[vetor_UF[i].Fj];
+                instrucoes_prontas[i].Fk_valor = banco_registradores[vetor_UF[i].Fk];
                 instrucoes_prontas[i].instrucao = memoria[PC];
-                instrucoes_prontas[i].operando1 = vetor_UF[i].Fj;
-                instrucoes_prontas[i].operando2 = vetor_UF[i].Fk;
                 instrucoes_prontas[i].ja_executou = false;
                 instrucoes_prontas[i].clock_lido = clock_processador;
                 clock_instrucoes_lidas[i] = clock_processador;
@@ -267,7 +269,7 @@ int banco_registradores[32])
     {
         resultado->resultado = executaInstrucao(*instrucao_pronta, banco_registradores);
         resultado->ciclo_termino = clock_processador;
-        resultado->reg_destino = instrucao_pronta->destino;
+        resultado->reg_destino = instrucao_pronta->Fi;
         resultado->PC = instrucao_pronta->PC;
         preencheStatusInstrucoes(EXECUCAO, instrucao_pronta->PC, 
         clock_processador, status_instrucoes);
@@ -461,12 +463,13 @@ int clock_instrucoes_lidas[5])
     lista_resultados[indice].resultado = -1;
 
     instrucoes_prontas[indice].clock_lido = -1;
-    instrucoes_prontas[indice].destino = -1;
+    instrucoes_prontas[indice].Fi = -1;
+    instrucoes_prontas[indice].Fi_valor = -1;
     instrucoes_prontas[indice].instrucao = -1;
     instrucoes_prontas[indice].ja_executou = false;
     instrucoes_prontas[indice].opcode = -1;
-    instrucoes_prontas[indice].operando1 = -1;
-    instrucoes_prontas[indice].operando2 = -1;
+    instrucoes_prontas[indice].Fj_valor = -1;
+    instrucoes_prontas[indice].Fk_valor = -1;
     instrucoes_prontas[indice].PC = -1;
 
     clock_instrucoes_lidas[indice] = -1;
@@ -495,34 +498,34 @@ int executaInstrucao(listaExecucao instrucao, int banco_registradores[32])
     switch (instrucao.opcode)
     {
     case ADD:
-        resultado = add(banco_registradores[instrucao.operando1], banco_registradores[instrucao.operando2]);
+        resultado = add(instrucao.Fj_valor, instrucao.Fk_valor);
         break;
     case ADDI:
-        resultado = addi(banco_registradores[instrucao.operando1], recuperaCampo(instrucao.instrucao, 16, 16));
+        resultado = addi(instrucao.Fj_valor, recuperaCampo(instrucao.instrucao, 16, 16));
         break;
     case AND:
-        resultado = and(banco_registradores[instrucao.operando1], banco_registradores[instrucao.operando2]);
+        resultado = and(instrucao.Fj_valor, instrucao.Fk_valor);
         break;
     case ANDI:
-        resultado = andi(banco_registradores[instrucao.operando1], recuperaCampo(instrucao.instrucao, 16, 16));
+        resultado = andi(instrucao.Fj_valor, recuperaCampo(instrucao.instrucao, 16, 16));
         break;
     case OR:
-        resultado = or (banco_registradores[instrucao.operando1], banco_registradores[instrucao.operando2]);
+        resultado = or (instrucao.Fj_valor, instrucao.Fk_valor);
         break;
     case ORI:
-        resultado = ori(banco_registradores[instrucao.operando1], recuperaCampo(instrucao.instrucao, 16, 16));
+        resultado = ori(instrucao.Fj_valor, recuperaCampo(instrucao.instrucao, 16, 16));
         break;
     case SLT:
-        resultado = slt(banco_registradores[instrucao.operando1], banco_registradores[instrucao.operando2]);
+        resultado = slt(instrucao.Fj_valor, instrucao.Fk_valor);
         break;
     case SUB:
-        resultado = sub(banco_registradores[instrucao.operando1], banco_registradores[instrucao.operando2]);
+        resultado = sub(instrucao.Fj_valor, instrucao.Fk_valor);
         break;
     case MULT:
-        resultado = mult(banco_registradores[instrucao.operando1], banco_registradores[instrucao.operando2]);
+        resultado = mult(instrucao.Fj_valor, instrucao.Fk_valor);
         break;
     case DIV:
-        resultado = divi(banco_registradores[instrucao.operando1], banco_registradores[instrucao.operando2]);
+        resultado = divi(instrucao.Fj_valor, instrucao.Fk_valor);
         if (resultado == -1)
         {
             printf("Erro: Divisao por 0 -> infinito. Abortando...\n");
@@ -533,7 +536,7 @@ int executaInstrucao(listaExecucao instrucao, int banco_registradores[32])
         resultado = li(recuperaCampo(instrucao.instrucao, 16, 16));
         break;
     case MOVE:
-        resultado = move(banco_registradores[instrucao.operando1]);
+        resultado = move(banco_registradores[instrucao.Fj_valor]);
         break;
     default:
         printf("Operacao: %d nao encontrada.\n", instrucao.opcode);
@@ -786,12 +789,13 @@ emissoes *lista_emissoes, int clock_instrucoes_lidas[5], int banco_registradores
 
         instrucoes_prontas[i].PC = -1;
         instrucoes_prontas[i].clock_lido = -1;
-        instrucoes_prontas[i].destino = -1;
+        instrucoes_prontas[i].Fi = -1;
+        instrucoes_prontas[i].Fi_valor = -1;
         instrucoes_prontas[i].instrucao = -1;
         instrucoes_prontas[i].ja_executou = false;
         instrucoes_prontas[i].opcode = -1;
-        instrucoes_prontas[i].operando1 = -1;
-        instrucoes_prontas[i].operando2 = -1;
+        instrucoes_prontas[i].Fj_valor = -1;
+        instrucoes_prontas[i].Fk_valor = -1;
 
         lista_instrucoes_executando[i].ciclos_restantes = -1;
         lista_instrucoes_executando[i].clock_inicio = -1;
