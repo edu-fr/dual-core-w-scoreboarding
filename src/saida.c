@@ -16,7 +16,6 @@ int banco_registradores[32], bool flag_registradores[32]){
 
     char nomes_UF[32][16];
     converteStatusRegistradores(nomes_UF, status_dos_registradores);
-    printf("\n\n Clock do processador : %d\n\n",clock_processador);
     fprintf(arq, "--------------------- ciclo %d ----------------------- \n \n", clock_processador); //escreveu primeira linha
     fprintf(arq, "1) status das instrucoes \n \n");
     fprintf(arq, "\t\t\t\temissao\t|\tleitura dos operandos\t|\texecucao\t|\tescrita dos resultados\t\n");   

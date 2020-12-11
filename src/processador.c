@@ -23,25 +23,13 @@ void* scoreboarding(void *arg){
     char *nome_arq_saida;
     nome_arq_saida = t_info->nome_arq_saida;
 
-    printf("Nome saida do t_info: %s e thread NUM : %d\n\n",t_info->nome_arq_saida, t_info->thread_num);
-    
-    
     char linhas_instrucoes[tamanho_memoria][64];
 
     for (int i = 0; i < tamanho_memoria; i++)
     {
         strcpy(linhas_instrucoes[i], t_info->linhas_instrucoes[i]);
     }
-    /**
 
-    for (int i = 0; i < tamanho_memoria; i++)
-    {
-        printf("Memoria posicao %d: %d\n", i, memoria[i]);
-        printf("Em texto: %s\n", linhas_instrucoes[i]);
-    }
-    printf("Tamanho da memoria: %d\n", tamanho_memoria);
-    printf("Nome do arquivo de saida: %s\n", nome_arq_saida);
-    */
     //Estruturas Auxiliares
     listaExecucao instrucoes_prontas[5];
     instrucaoExecutando lista_instrucoes_executando[5];
@@ -64,7 +52,6 @@ void* scoreboarding(void *arg){
 
     do
     {
-        //printf("\n======== CLOCK %d ========\n", clock_processador);
         escritaResultados(lista_resultados, instrucoes_escritas, 
         clock_processador, &status_instrucoes, banco_registradores, 
         vetor_UF, flag_registradores, lista_emissoes, clock_instrucoes_lidas);
@@ -95,7 +82,6 @@ void* scoreboarding(void *arg){
                 PC += 1;
             }
         }
-        printf("\nClock do processador (%d) %d \n \n",t_info->thread_num,clock_processador);
         saida(arq_saida, PC, linhas_instrucoes, clock_processador,
         status_instrucoes, vetor_UF, status_dos_registradores, 
         banco_registradores, flag_registradores);
@@ -226,7 +212,6 @@ emissoes *lista_emissoes, int clock_instrucoes_lidas[5], int banco_registradores
                 instrucoes_prontas[i].ja_executou = false;
                 instrucoes_prontas[i].clock_lido = clock_processador;
                 clock_instrucoes_lidas[i] = clock_processador;
-                //printf("\nInstrucao n %d foi lida no clock %d! \n", PC, instrucoes_prontas[i].clock_lido);
                 preencheStatusInstrucoes(LEITURA_OPERANDOS, lista_emissoes->PC_emitido[i],
                  clock_processador, status_instrucoes);
             }
@@ -238,7 +223,6 @@ void execucao(listaExecucao instrucoes_prontas[5],
 instrucaoExecutando lista_instrucoes_executando[5], resultadoExec lista_resultados[5], 
 int clock_processador, statusInst *status_instrucoes, int banco_registradores[32])
 {
-    /* Testar D+ */
     executaUF(&instrucoes_prontas[Mult1], &lista_instrucoes_executando[Mult1],
      &lista_resultados[Mult1], clock_processador, status_instrucoes, banco_registradores);
     executaUF(&instrucoes_prontas[Mult2], &lista_instrucoes_executando[Mult2], 
@@ -534,7 +518,7 @@ int executaInstrucao(listaExecucao instrucao, int banco_registradores[32])
         resultado = li(recuperaCampo(instrucao.instrucao, 16, 16));
         break;
     case MOVE:
-        resultado = move(banco_registradores[instrucao.Fj_valor]);
+        resultado = move(instrucao.Fj_valor);
         break;
     default:
         printf("Operacao: %d nao encontrada.\n", instrucao.opcode);
@@ -770,7 +754,6 @@ resultadoExec lista_resultados[5], int instrucoes_escritas[5], int *clock_proces
 UnidadeFuncional vetor_UF[5], enum UF status_dos_registradores[32],bool flag_registradores[32],
 emissoes *lista_emissoes, int clock_instrucoes_lidas[5], int banco_registradores[32], statusInst *status_instrucoes)
 {
-    printf("Cheguei na init Score !! \n");
     status_instrucoes->instrucoes = memoria; // recebe todas as instrucoes
     status_instrucoes->emissao = (int *)calloc(sizeof(int), tamanho_memoria);
     status_instrucoes->leituraOP = (int *)calloc(sizeof(int), tamanho_memoria);

@@ -32,10 +32,8 @@ void lerArquivo(FILE *arquivo_instrucao, int* memoria, char **linhas_instrucoes,
         strcpy(linhas_instrucoes[numero_instrucao], buffer_instrucao);
         numero_instrucao++;
         lerInstrucao(buffer_instrucao, memoria, tamanho_memoria);
-        printf("Sai do lerInstrucao \n\n");
         
     }
-    printf("Sai do while do lerarq\n\n");
 }
 
 int registradorParaBinario(char token_instrucao[3]){
@@ -68,26 +66,21 @@ void lerInstrucao(char *instrucao, int *memoria, int tamanho_memoria){
             break;
         }
         token_instrucao = strtok(NULL, " ");
-        printf("Token instrucao %s \n",token_instrucao);
         strcpy(aux_registradores[k], token_instrucao); 
     }
 
     if(flag_opcode_li){ // opcode LI
-        printf("entrei no Li\n\n");
         bin_registradores[0] = registradorParaBinario(aux_registradores[0]);
         bin_registradores[1] = 0;
         bin_registradores[2] = 0;
         bin_imediate = atoi(aux_registradores[1]);
         bin_instrucao = (bin_opcode << 26) + (bin_registradores[0] << 21) + (bin_registradores[1] << 16) + bin_imediate;
-        printf("Bin inst %d \n\n",bin_instrucao);
     }else if(flag_opcode_imediate){ //opcode de instrucao que usa imediato
-        printf("entrando na imediate \n\n");
         bin_registradores[0] = registradorParaBinario(aux_registradores[0]);
         bin_registradores[1] = registradorParaBinario(aux_registradores[1]);
         bin_registradores[2] = -1;
         bin_imediate = atoi(aux_registradores[2]);
         bin_instrucao = (bin_opcode << 26) + (bin_registradores[0] << 21) + (bin_registradores[1] << 16) + bin_imediate;
-        printf("saindo na imediate\n");
     }else if(flag_opcode_move){ // opcode move
         bin_registradores[0] = registradorParaBinario(aux_registradores[0]);
         bin_registradores[1] = registradorParaBinario(aux_registradores[1]);
@@ -115,7 +108,6 @@ void salvarNaMemoriaDeInstrucoes(int instrucao, int *memoria, int tamanho_memori
         }
     }
     memoria[i] = instrucao;
-    printf("Memoria %d\n\n",memoria[i]);
 }
 
 int8_t opcodeParaBinario(char *opcode){
@@ -234,7 +226,7 @@ int identificaRegistrador(char *buffer){
     }else if(!strcmp(buffer, "ra")){
         return ra;
     }else{
-        printf("Registrador invalido!\n");
+        printf("Registrador invalido! %s \n", buffer);
         exit(1);
     }
 }

@@ -1,0 +1,3588 @@
+--------------------- ciclo 1 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s0					sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf									LOG									
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+																		
+
+--------------------- ciclo 2 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s0						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf									LOG									
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+																		
+
+--------------------- ciclo 3 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s0						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf									LOG									
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+																		
+
+--------------------- ciclo 4 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s0						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf									LOG									
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+																		
+
+--------------------- ciclo 5 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s0						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf									LOG									
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+																		
+
+--------------------- ciclo 6 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s0						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf									LOG									
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+																		
+
+--------------------- ciclo 7 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s0						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf									LOG									
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								10										
+
+--------------------- ciclo 8 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	move	$s0	$s1				sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf									LOG									
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								10										
+
+--------------------- ciclo 9 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	move	$s0	$s1				sim	
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf									LOG									
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								10										
+
+--------------------- ciclo 10 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	move	$s0	$s1				sim	
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf									LOG									
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								10										
+
+--------------------- ciclo 11 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	move	$s0	$s1				sim	
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf									LOG									
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0										
+
+--------------------- ciclo 12 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1					sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0										
+
+--------------------- ciclo 13 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0										
+
+--------------------- ciclo 14 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0										
+
+--------------------- ciclo 15 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0										
+
+--------------------- ciclo 16 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0										
+
+--------------------- ciclo 17 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0										
+
+--------------------- ciclo 18 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	1									
+
+--------------------- ciclo 19 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1					sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	1									
+
+--------------------- ciclo 20 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	1									
+
+--------------------- ciclo 21 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	1									
+
+--------------------- ciclo 22 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	1									
+
+--------------------- ciclo 23 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	1									
+
+--------------------- ciclo 24 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	1									
+
+--------------------- ciclo 25 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	2									
+
+--------------------- ciclo 26 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1					sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	2									
+
+--------------------- ciclo 27 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	2									
+
+--------------------- ciclo 28 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	2									
+
+--------------------- ciclo 29 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	2									
+
+--------------------- ciclo 30 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	2									
+
+--------------------- ciclo 31 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	2									
+
+--------------------- ciclo 32 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s1						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	3									
+
+--------------------- ciclo 33 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	move	$s2	$s3				sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf											LOG							
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	3									
+
+--------------------- ciclo 34 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	move	$s2	$s3				sim	
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf											LOG							
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	3									
+
+--------------------- ciclo 35 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	move	$s2	$s3				sim	
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf											LOG							
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	3									
+
+--------------------- ciclo 36 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	move	$s2	$s3				sim	
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf											LOG							
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	3	0								
+
+--------------------- ciclo 37 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$t0	$s1	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf	LOG																	
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	3	0								
+
+--------------------- ciclo 38 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$t0	$s1	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf	LOG																	
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	3	0								
+
+--------------------- ciclo 39 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$t0	$s1	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf	LOG																	
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	3	0								
+
+--------------------- ciclo 40 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$t0	$s1	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf	LOG																	
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	3	0								
+
+--------------------- ciclo 41 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$t0	$s1	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf	LOG																	
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	3	0								
+
+--------------------- ciclo 42 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$t0	$s1	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf	LOG																	
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	3	0								
+
+--------------------- ciclo 43 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$t0	$s1	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf	LOG																	
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	3	0								
+
+--------------------- ciclo 44 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$t0	$s1	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf	LOG																	
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	3	0								
+
+--------------------- ciclo 45 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$t0	$s1	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf	LOG																	
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+								0	3	0								
+
+--------------------- ciclo 46 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$t0	$s1	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf	LOG																	
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	3	0								
+
+--------------------- ciclo 47 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s1	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	3	0								
+
+--------------------- ciclo 48 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s1	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	3	0								
+
+--------------------- ciclo 49 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s1	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	3	0								
+
+--------------------- ciclo 50 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s1	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	3	0								
+
+--------------------- ciclo 51 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s1	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	3	0								
+
+--------------------- ciclo 52 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s1	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	3	0								
+
+--------------------- ciclo 53 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s1	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	3	0								
+
+--------------------- ciclo 54 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s1	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	3	0								
+
+--------------------- ciclo 55 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s1	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	3	0								
+
+--------------------- ciclo 56 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s1	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf										LOG								
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 57 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s2	$s0	$s1			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf											LOG							
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 58 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s2	$s0	$s1			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf											LOG							
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 59 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s2	$s0	$s1			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf											LOG							
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 60 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s2	$s0	$s1			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf											LOG							
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 61 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s2	$s0	$s1			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf											LOG							
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 62 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s2	$s0	$s1			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf											LOG							
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 63 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s2	$s0	$s1			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf											LOG							
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 64 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s2	$s0	$s1			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf											LOG							
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 65 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s2	$s0	$s1			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf											LOG							
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 66 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s2	$s0	$s1			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf											LOG							
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 67 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s3	$s0	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf												LOG						
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 68 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s3	$s0	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf												LOG						
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 69 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s3	$s0	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf												LOG						
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 70 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s3	$s0	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf												LOG						
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 71 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s3	$s0	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf												LOG						
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 72 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s3	$s0	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf												LOG						
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 73 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s3	$s0	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf												LOG						
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 74 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s3	$s0	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf												LOG						
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 75 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s3	$s0	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf												LOG						
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0								
+
+--------------------- ciclo 76 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s3	$s0	$s0			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf												LOG						
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0							
+
+--------------------- ciclo 77 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s4	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf													LOG					
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0							
+
+--------------------- ciclo 78 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s4	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf													LOG					
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0							
+
+--------------------- ciclo 79 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s4	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf													LOG					
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0							
+
+--------------------- ciclo 80 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s4	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf													LOG					
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0							
+
+--------------------- ciclo 81 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s4	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf													LOG					
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0							
+
+--------------------- ciclo 82 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s4	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf													LOG					
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0							
+
+--------------------- ciclo 83 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s4	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf													LOG					
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0							
+
+--------------------- ciclo 84 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s4	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf													LOG					
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0							
+
+--------------------- ciclo 85 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s4	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf													LOG					
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0							
+
+--------------------- ciclo 86 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	slt	$s4	$t0	$s2			sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf													LOG					
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0						
+
+--------------------- ciclo 87 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|sim	load	$s5					sim	sim
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf														LOG				
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0						
+
+--------------------- ciclo 88 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				
+div $t1 $s0 $s5			88			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5			sim	sim
+log	|sim	load	$s5						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV												LOG				
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0						
+
+--------------------- ciclo 89 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				
+div $t1 $s0 $s5			88			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	nao
+log	|sim	load	$s5						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV												LOG				
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0						
+
+--------------------- ciclo 90 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				
+div $t1 $s0 $s5			88			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	nao
+log	|sim	load	$s5						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV												LOG				
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0						
+
+--------------------- ciclo 91 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				
+div $t1 $s0 $s5			88			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	nao
+log	|sim	load	$s5						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV												LOG				
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0						
+
+--------------------- ciclo 92 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				92			
+div $t1 $s0 $s5			88			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	nao
+log	|sim	load	$s5						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV												LOG				
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0						
+
+--------------------- ciclo 93 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				92			93
+div $t1 $s0 $s5			88			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	nao
+log	|sim	load	$s5						
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV												LOG				
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0	15					
+
+--------------------- ciclo 94 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				92			93
+div $t1 $s0 $s5			88			94				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	sim
+log	|nao								
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV																
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0	15					
+
+--------------------- ciclo 95 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				92			93
+div $t1 $s0 $s5			88			94				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	sim
+log	|nao								
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV																
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0	15					
+
+--------------------- ciclo 96 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				92			93
+div $t1 $s0 $s5			88			94				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	sim
+log	|nao								
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV																
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0	15					
+
+--------------------- ciclo 97 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				92			93
+div $t1 $s0 $s5			88			94				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	sim
+log	|nao								
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV																
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0	15					
+
+--------------------- ciclo 98 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				92			93
+div $t1 $s0 $s5			88			94				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	sim
+log	|nao								
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV																
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0	15					
+
+--------------------- ciclo 99 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				92			93
+div $t1 $s0 $s5			88			94				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	sim
+log	|nao								
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV																
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0	15					
+
+--------------------- ciclo 100 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				92			93
+div $t1 $s0 $s5			88			94				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	sim
+log	|nao								
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV																
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0	15					
+
+--------------------- ciclo 101 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				92			93
+div $t1 $s0 $s5			88			94				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	sim
+log	|nao								
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV																
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0	15					
+
+--------------------- ciclo 102 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				92			93
+div $t1 $s0 $s5			88			94				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	sim
+log	|nao								
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV																
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0	15					
+
+--------------------- ciclo 103 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				92			93
+div $t1 $s0 $s5			88			94				
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	sim
+log	|nao								
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV																
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0	15					
+
+--------------------- ciclo 104 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				92			93
+div $t1 $s0 $s5			88			94				104			
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	sim
+log	|nao								
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV																
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0								0	0	0	0	0	15					
+
+--------------------- ciclo 105 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				92			93
+div $t1 $s0 $s5			88			94				104			105
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|sim	divi	$t1	$s0	$s5		LOG	sim	sim
+log	|nao								
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf		DIV																
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0	0							0	0	0	0	0	15					
+
+--------------------- ciclo 106 ----------------------- 
+ 
+1) status das instrucoes 
+ 
+				emissao	|	leitura dos operandos	|	execucao	|	escrita dos resultados	
+li $s0 10			1			2				6			7
+move $s0 $s1			8			9				10			11
+li $s1 1			12			13				17			18
+li $s1 2			19			20				24			25
+li $s1 3			26			27				31			32
+move $s2 $s3			33			34				35			36
+slt $t0 $s1 $s0			37			38				45			46
+slt $s1 $t0 $s2			47			48				55			56
+slt $s2 $s0 $s1			57			58				65			66
+slt $s3 $s0 $s0			67			68				75			76
+slt $s4 $t0 $s2			77			78				85			86
+li $s5 15			87			88				92			93
+div $t1 $s0 $s5			88			94				104			105
+
+2) status das unidades funcionais
+
+
+uf	|busy	|op	|fi	|fj	|fk	|qj	|qk	|rj	|rk
+mult1	|nao								
+mult2	|nao								
+add	|nao								
+div	|nao								
+log	|nao								
+
+3) status dos registradores 
+ 
+	$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+uf																		
+
+4) banco de registradores 
+ 
+$t0	|$t1	|$t2	|$t3	|$t4	|$t5	|$t6	|$t7	|$s0	|$s1	|$s2	|$s3	|$s4	|$s5	|$s6	|$s7	|$t8	|$t9	
+0	0							0	0	0	0	0	15					
+

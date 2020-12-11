@@ -1,0 +1,6 @@
+li $t1 1
+li $t2 4
+li $t3 3
+div $s0 $t2 $t3
+div $s1 $t3 $t1
+div $s2 $s1 $s0

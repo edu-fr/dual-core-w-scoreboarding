@@ -22,12 +22,9 @@ void tInfo_init(tInfo* t_info, int thread_num, int *memoria, int tamanho_memoria
         t_info->linhas_instrucoes[i] = malloc(64);
     }
 
-    printf("\nPRINT INIT\n");
     for(int i = 0; i < tamanho_memoria; i++){
         strcpy(t_info->linhas_instrucoes[i], linhas_instrucoes[i]);
-        printf("linhas_instrucoes[%d]: %s\n", i, linhas_instrucoes[i]);
     }
-    printf("\nFIM DO PRINT INIT\n");
 }
 
 // Mostra como utilizar o programa implementado
@@ -80,7 +77,6 @@ int main(int argc, char **argv){
                 return -1;
         }
     }
-    printf("to na main \n");
     s = pthread_attr_init(&attr);
     
 
@@ -112,29 +108,16 @@ int main(int argc, char **argv){
     }
 
 
-    printf("entrando na conversao \n");
     conversor(programa[0], memoria_1, linhas_instrucoes_1, tamanho_memoria_1);
 
-    printf("Programa 2 : %s \n",programa[1]);
-    
     conversor(programa[1], memoria_2, linhas_instrucoes_2, tamanho_memoria_2);
 
-    printf("saindo  na conversao \n");
     lerArquivoConfiguracao(config);
-    
-    /*
-    printf("Tamanho memoria: 1: %d, 2: %d\n", tamanho_memoria_1, tamanho_memoria_2);
-    printf("Programa 1: %s, 2: %s\n", programa[0], programa[1]);  
-    printf("Config: %s", config);
-    */
     
     tInfo* t_info = malloc(sizeof(tInfo) * 2);
     
     tInfo_init(&t_info[FLUXO_1], FLUXO_1, memoria_1, tamanho_memoria_1, saida[FLUXO_1], linhas_instrucoes_1);
     tInfo_init(&t_info[FLUXO_2], FLUXO_2, memoria_2, tamanho_memoria_2, saida[FLUXO_2], linhas_instrucoes_2);
-    
-    printf("Nome saida: %s\n\n",t_info[FLUXO_1].nome_arq_saida);
-    printf("Nome saida: %s\n\n",t_info[FLUXO_2].nome_arq_saida);
     
     for(int i = 0; i < 2; i++) {
         s = pthread_create(&t_info[i].thread_id, &attr,
